@@ -293,13 +293,64 @@ def cmd_sync(args):
     for note in notes:
         print(f"    - {note.get('title', 'Untitled')} ({note.get('body_length', 0)} chars)")
 
+    # Channel 4: Google Docs
+    print("\n  Google Docs:")
+    from alchemia.channels.google_docs import get_status, sync_google_docs
+
+    gdocs_status = get_status()
+    if not gdocs_status["installed"]:
+        print("    Skipped — google-api-python-client not installed")
+        print("    Run: pip install google-api-python-client google-auth-oauthlib")
+    elif not gdocs_status["authenticated"]:
+        print("    Skipped — not authenticated")
+        print("    Run: alchemia gdocs-auth")
+    else:
+        gdocs = sync_google_docs()
+        synced = sum(1 for d in gdocs if d["status"] == "synced")
+        up_to_date = sum(1 for d in gdocs if d["status"] == "up_to_date")
+        failed = sum(1 for d in gdocs if d["status"] == "failed")
+        print(f"    {len(gdocs)} docs in Alchemia folder: {synced} synced, {up_to_date} up-to-date, {failed} failed")
+        for doc in gdocs:
+            print(f"    - {doc['name']} [{doc['status']}]")
+
     # Channel 5: Gemini visits
     print("\n  Gemini visits:")
     intake_dir = Path("~/Workspace/intake").expanduser()
     gemini = parse_gemini_visits(intake_dir)
     print(f"    Found {len(gemini)} Gemini visit files")
 
-    print(f"\n  Sync complete.")
+    print("\n  Sync complete.")
+
+
+def cmd_gdocs_auth(args):
+    """Authorize Google Docs access via OAuth2."""
+    from alchemia.channels.google_docs import authorize
+
+    print("GDOCS-AUTH — Starting OAuth2 consent flow...")
+    success = authorize()
+    if success:
+        print("  Authorization successful. Google Docs sync is now available.")
+    else:
+        sys.exit(1)
+
+
+def cmd_gdocs_status(args):
+    """Show Google Docs integration status."""
+    from alchemia.channels.google_docs import get_status
+
+    print("GDOCS-STATUS —")
+    status = get_status()
+    print(f"  Dependencies installed: {status['installed']}")
+    print(f"  Authenticated: {status['authenticated']}")
+    print(f"  Alchemia folder found: {status['folder_found']}")
+    print(f"  Documents in folder: {status['doc_count']}")
+
+    if not status["installed"]:
+        print("\n  To set up: pip install google-api-python-client google-auth-oauthlib")
+    elif not status["authenticated"]:
+        print("\n  To authenticate: alchemia gdocs-auth")
+    elif not status["folder_found"]:
+        print("\n  Create a folder named 'Alchemia' in Google Drive to get started.")
 
 
 DEFAULT_SOURCE_DIRS = [
@@ -389,6 +440,14 @@ def main():
     p_synth = sub.add_parser("synthesize", help="Generate creative briefs from references")
     p_synth.add_argument("--output-dir", default="data/creative-briefs", help="Output directory")
     p_synth.set_defaults(func=cmd_synthesize)
+
+    # gdocs-auth
+    p_gdauth = sub.add_parser("gdocs-auth", help="Authorize Google Docs access via OAuth2")
+    p_gdauth.set_defaults(func=cmd_gdocs_auth)
+
+    # gdocs-status
+    p_gdstatus = sub.add_parser("gdocs-status", help="Show Google Docs integration status")
+    p_gdstatus.set_defaults(func=cmd_gdocs_status)
 
     args = parser.parse_args()
     if not args.command:

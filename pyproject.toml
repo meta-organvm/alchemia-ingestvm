@@ -18,6 +18,10 @@ dev = [
     "pytest>=8.0",
     "ruff>=0.4",
 ]
+google = [
+    "google-api-python-client>=2.100",
+    "google-auth-oauthlib>=1.2",
+]
 
 [project.scripts]
 alchemia = "alchemia.cli:main"

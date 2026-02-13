@@ -80,18 +80,23 @@ def put_file(
 
     b64_content = base64.b64encode(content_bytes).decode("utf-8")
 
-    cmd = [
-        "gh", "api", "-X", "PUT",
-        f"/repos/{org}/{repo}/contents/{path}",
-        "-f", f"message={message}",
-        "-f", f"content={b64_content}",
-    ]
+    # Use stdin piping to avoid ARG_MAX on large files
+    payload = {
+        "message": message,
+        "content": b64_content,
+    }
     if sha:
-        cmd.extend(["-f", f"sha={sha}"])
+        payload["sha"] = sha
     if branch:
-        cmd.extend(["-f", f"branch={branch}"])
+        payload["branch"] = branch
 
-    result = subprocess.run(cmd, capture_output=True, text=True)
+    result = subprocess.run(
+        ["gh", "api", "-X", "PUT",
+         f"/repos/{org}/{repo}/contents/{path}",
+         "--input", "-"],
+        input=json.dumps(payload),
+        capture_output=True, text=True,
+    )
     if result.returncode != 0:
         err = result.stderr.strip()[:200]
         print(f"    FAIL {path}: {err}")

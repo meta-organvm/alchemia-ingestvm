@@ -153,17 +153,22 @@ def deploy_repo_batch(
                 sha_result = subprocess.run(sha_cmd, capture_output=True, text=True)
                 existing_sha = sha_result.stdout.strip() if sha_result.returncode == 0 else None
 
-                cmd = [
-                    "gh", "api", "-X", "PUT",
-                    f"/repos/{org}/{repo}/contents/{target}",
-                    "-f", f"message=chore(alchemia): ingest {file_info['filename']}",
-                    "-f", f"content={b64}",
-                    "-f", f"branch={branch}",
-                ]
+                # Use stdin piping to avoid ARG_MAX on large files
+                payload = {
+                    "message": f"chore(alchemia): ingest {file_info['filename']}",
+                    "content": b64,
+                    "branch": branch,
+                }
                 if existing_sha:
-                    cmd.extend(["-f", f"sha={existing_sha}"])
+                    payload["sha"] = existing_sha
 
-                deploy_result = subprocess.run(cmd, capture_output=True, text=True)
+                deploy_result = subprocess.run(
+                    ["gh", "api", "-X", "PUT",
+                     f"/repos/{org}/{repo}/contents/{target}",
+                     "--input", "-"],
+                    input=json.dumps(payload),
+                    capture_output=True, text=True,
+                )
                 if deploy_result.returncode == 0:
                     result["deployed"] += 1
                 else:
