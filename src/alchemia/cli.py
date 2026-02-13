@@ -151,13 +151,61 @@ def cmd_alchemize(args):
         print("  Run without --dry-run to execute.")
         return
 
-    # Generate provenance registry
+    # Actual deployment
+    from alchemia.alchemize.batch_deployer import build_deployment_manifest, deploy_repo_batch
+    from alchemia.alchemize.provenance import generate_provenance_yaml
+
+    manifest = build_deployment_manifest(entries, registry)
+
+    # Apply organ/repo filters
+    if args.organ:
+        organ_filter = f"ORGAN-{args.organ.upper()}"
+        manifest = {
+            k: v for k, v in manifest.items()
+            if any(
+                e.get("classification", {}).get("target_organ") == organ_filter
+                for e in entries
+                if e.get("classification", {}).get("target_repo") == v["repo"]
+            )
+        }
+
+    if args.repo:
+        manifest = {k: v for k, v in manifest.items() if args.repo in k}
+
+    print(f"\n  Deploying to {len(manifest)} repos...")
+    total_deployed = 0
+    total_skipped = 0
+    total_failed = 0
+
+    for repo_key, repo_data in sorted(manifest.items()):
+        org = repo_data["org"]
+        repo = repo_data["repo"]
+        files = repo_data["files"]
+        print(f"\n  {repo_key}: {len(files)} files")
+
+        result = deploy_repo_batch(
+            org, repo, files,
+            force=args.force,
+            batch_size=args.batch_size,
+        )
+
+        total_deployed += result["deployed"]
+        total_skipped += result["skipped"]
+        total_failed += result["failed"]
+
+        print(f"    deployed={result['deployed']} skipped={result['skipped']} failed={result['failed']}")
+        if result.get("errors"):
+            for err in result["errors"][:3]:
+                print(f"    ERROR: {err}")
+
+    print(f"\n  Summary: deployed={total_deployed} skipped={total_skipped} failed={total_failed}")
+
+    # Generate and save provenance registry
     prov_registry = generate_provenance_registry(entries)
     prov_path = Path("data/provenance-registry.json")
     with open(prov_path, "w") as f:
         json.dump(prov_registry, f, indent=2, default=str)
-    print(f"\n  Wrote {prov_path}")
-    print(f"  Provenance: {prov_registry['total_classified']} classified → {prov_registry['total_target_repos']} repos")
+    print(f"  Wrote {prov_path}")
 
 
 def cmd_status(args):
@@ -180,6 +228,25 @@ def cmd_review(args):
     sys.exit(1)
 
 
+def cmd_synthesize(args):
+    """Generate creative briefs from accumulated references."""
+    from alchemia.synthesize import generate_all_briefs, generate_workflow_integration_example
+
+    output_dir = Path(args.output_dir)
+    print("SYNTHESIZE — Generating creative briefs...")
+
+    briefs = generate_all_briefs(output_dir=output_dir)
+    print(f"\n  Generated {len(briefs)} creative briefs")
+
+    # Also generate the workflow integration example
+    example = generate_workflow_integration_example()
+    example_path = output_dir / "workflow-integration-example.yml"
+    example_path.write_text(example)
+    print(f"  Generated: {example_path}")
+
+    print(f"\n  All briefs written to {output_dir}/")
+
+
 def cmd_capture(args):
     """Quick-capture an aesthetic reference."""
     from alchemia.aesthetic import add_reference
@@ -194,6 +261,45 @@ def cmd_capture(args):
     print(f"CAPTURE — Added {entry['type']} reference")
     print(f"  Tags: {entry.get('tags', [])}")
     print(f"  Captured: {entry.get('captured', '')}")
+
+
+def cmd_sync(args):
+    """Sync all capture channels (bookmarks, notes, AI chats)."""
+    from alchemia.aesthetic import add_reference
+    from alchemia.channels.bookmarks import sync_bookmarks
+    from alchemia.channels.apple_notes import export_alchemia_notes
+    from alchemia.channels.ai_chats import parse_gemini_visits
+
+    print("SYNC — Running capture channels...")
+
+    # Channel 2: Bookmarks
+    print("\n  Bookmarks:")
+    bookmarks = sync_bookmarks()
+    new_bookmarks = 0
+    for bm in bookmarks:
+        entry = add_reference(
+            ref_type="url",
+            value=bm["url"],
+            tags=["bookmark", bm["source"]],
+            notes=f"From {bm['source']}: {bm.get('title', '')}",
+        )
+        new_bookmarks += 1
+    print(f"    Found {len(bookmarks)} bookmarks in Inspirations folder, added {new_bookmarks}")
+
+    # Channel 3: Apple Notes
+    print("\n  Apple Notes:")
+    notes = export_alchemia_notes()
+    print(f"    Found {len(notes)} notes in Alchemia folder")
+    for note in notes:
+        print(f"    - {note.get('title', 'Untitled')} ({note.get('body_length', 0)} chars)")
+
+    # Channel 5: Gemini visits
+    print("\n  Gemini visits:")
+    intake_dir = Path("~/Workspace/intake").expanduser()
+    gemini = parse_gemini_visits(intake_dir)
+    print(f"    Found {len(gemini)} Gemini visit files")
+
+    print(f"\n  Sync complete.")
 
 
 DEFAULT_SOURCE_DIRS = [
@@ -252,6 +358,7 @@ def main():
     p_alch = sub.add_parser("alchemize", help="Transform + deploy to repos")
     p_alch.add_argument("--mapping", default="data/absorb-mapping.json", help="Classified mapping file")
     p_alch.add_argument("--dry-run", action="store_true")
+    p_alch.add_argument("--force", action="store_true", help="Overwrite existing files")
     p_alch.add_argument("--organ", help="Limit to specific organ (e.g. I, II)")
     p_alch.add_argument("--repo", help="Limit to specific repo name")
     p_alch.add_argument("--batch-size", type=int, default=20)
@@ -273,6 +380,15 @@ def main():
     p_capture.add_argument("--tags", help="Comma-separated tags")
     p_capture.add_argument("--notes", help="Why this reference matters")
     p_capture.set_defaults(func=cmd_capture)
+
+    # sync
+    p_sync = sub.add_parser("sync", help="Sync all capture channels")
+    p_sync.set_defaults(func=cmd_sync)
+
+    # synthesize
+    p_synth = sub.add_parser("synthesize", help="Generate creative briefs from references")
+    p_synth.add_argument("--output-dir", default="data/creative-briefs", help="Output directory")
+    p_synth.set_defaults(func=cmd_synthesize)
 
     args = parser.parse_args()
     if not args.command:

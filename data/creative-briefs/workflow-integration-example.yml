@@ -1,0 +1,33 @@
+# Example GitHub Actions step: consume the aesthetic chain
+# Add this to any workflow that generates content (READMEs, essays, etc.)
+
+- name: Fetch aesthetic chain
+  id: aesthetic
+  run: |
+    # Fetch taste.yaml from alchemia-ingestvm
+    TASTE=$(gh api repos/meta-organvm/alchemia-ingestvm/contents/taste.yaml \
+      --jq '.content' | base64 -d)
+
+    # Fetch organ-specific aesthetic
+    ORGAN_AESTHETIC=$(gh api repos/${GITHUB_REPOSITORY_OWNER}/.github/contents/organ-aesthetic.yaml \
+      --jq '.content' | base64 -d 2>/dev/null || echo "")
+
+    # Combine into a prompt injection block
+    cat > aesthetic-context.md << 'AESTHETIC_EOF'
+    ## Aesthetic Guidelines (from taste.yaml)
+
+    ### Tone
+    $(echo "$TASTE" | yq '.tone')
+
+    ### Anti-Patterns
+    $(echo "$TASTE" | yq '.anti_patterns[]' | sed 's/^/- /')
+
+    ### Organ Modifiers
+    $(echo "$ORGAN_AESTHETIC" | yq '.modifiers' 2>/dev/null || echo "None")
+    AESTHETIC_EOF
+
+- name: Generate content with aesthetic constraints
+  run: |
+    # Include aesthetic-context.md in the AI prompt
+    cat aesthetic-context.md >> generation-prompt.md
+    # ... rest of generation logic
