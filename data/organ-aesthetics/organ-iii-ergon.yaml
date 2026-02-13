@@ -1,0 +1,12 @@
+schema_version: "1.0"
+inherits: "meta-organvm/alchemia-ingestvm/taste.yaml"
+organ: "ORGAN-III"
+name: "Ergon"
+
+modifiers:
+  palette_shift: "professional neutrals — navy, charcoal, clean white, minimal accent"
+  typography_emphasis: "sans-serif authority, clear hierarchy, scannable headers"
+  tone_shift: "crisp, action-oriented, value-proposition language — zero fluff"
+  visual_shift: "clean data visualization, pricing tables, feature grids, business metrics"
+
+specific_references: []

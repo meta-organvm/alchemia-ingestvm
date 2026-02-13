@@ -1,0 +1,12 @@
+schema_version: "1.0"
+inherits: "meta-organvm/alchemia-ingestvm/taste.yaml"
+organ: "ORGAN-V"
+name: "Logos"
+
+modifiers:
+  palette_shift: "warm paper tones — amber highlights on dark, reading-lamp warmth"
+  typography_emphasis: "literary serif for essay body, generous line-height, reading-optimized"
+  tone_shift: "essayistic, first-person permitted, building-in-public honesty"
+  visual_shift: "long-form typography, pull quotes, minimal illustration, footnotes welcome"
+
+specific_references: []

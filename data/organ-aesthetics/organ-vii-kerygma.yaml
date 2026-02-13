@@ -1,0 +1,12 @@
+schema_version: "1.0"
+inherits: "meta-organvm/alchemia-ingestvm/taste.yaml"
+organ: "ORGAN-VII"
+name: "Kerygma"
+
+modifiers:
+  palette_shift: "higher contrast for social media visibility — crimson accent prominent"
+  typography_emphasis: "bold headlines, scan-optimized, social-card-aware sizing"
+  tone_shift: "announcement cadence, concise impact, headline-first writing"
+  visual_shift: "social card templates, announcement banners, share-optimized layouts"
+
+specific_references: []

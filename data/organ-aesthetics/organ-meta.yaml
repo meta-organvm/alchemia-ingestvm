@@ -1,0 +1,12 @@
+schema_version: "1.0"
+inherits: "meta-organvm/alchemia-ingestvm/taste.yaml"
+organ: "META"
+name: "Meta-Organvm"
+
+modifiers:
+  palette_shift: "full palette — this is the umbrella, uses the complete system identity"
+  typography_emphasis: "balanced mix — demonstrates the full range"
+  tone_shift: "authoritative yet transparent, meta-commentary on the system itself"
+  visual_shift: "system-of-systems diagrams, org charts, registry visualizations, bird's-eye view"
+
+specific_references: []

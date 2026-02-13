@@ -1,0 +1,12 @@
+schema_version: "1.0"
+inherits: "meta-organvm/alchemia-ingestvm/taste.yaml"
+organ: "ORGAN-I"
+name: "Theoria"
+
+modifiers:
+  palette_shift: "cooler, more muted — blue-grays over warm tones"
+  typography_emphasis: "serif headings for philosophical weight, monospace for formal notation"
+  tone_shift: "more academic, denser, philosophical gravitas — tolerate longer sentences"
+  visual_shift: "diagram-heavy, clean lines, mathematical precision, whiteboard aesthetic"
+
+specific_references: []

@@ -1,0 +1,12 @@
+schema_version: "1.0"
+inherits: "meta-organvm/alchemia-ingestvm/taste.yaml"
+organ: "ORGAN-IV"
+name: "Taxis"
+
+modifiers:
+  palette_shift: "terminal green-on-dark, system-monitor aesthetic, status indicators"
+  typography_emphasis: "monospace dominant — this is infrastructure, code-first"
+  tone_shift: "terse, operational, RFC-style precision — numbered sections, clear specification"
+  visual_shift: "flow diagrams, state machines, dependency graphs, system architecture"
+
+specific_references: []

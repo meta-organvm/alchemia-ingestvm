@@ -1,0 +1,13 @@
+__pycache__/
+*.egg-info/
+dist/
+build/
+.ruff_cache/
+.mypy_cache/
+.pytest_cache/
+*.pyc
+.venv/
+data/intake-inventory.json
+data/absorb-mapping.json
+data/provenance-registry.json
+.serena/

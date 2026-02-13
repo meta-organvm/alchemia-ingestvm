@@ -1,0 +1,58 @@
+schema_version: '1.0'
+owner: 4444j99
+palette:
+  primary: '#1a1a2e'
+  secondary: '#16213e'
+  accent: '#e94560'
+  background: '#0f0f23'
+  text: '#d4d4d8'
+  muted: '#6b7280'
+typography:
+  headings: serif
+  body: sans-serif
+  code: monospace
+  weight_preference: medium
+  letter_spacing: tight
+tone:
+  voice: cerebral but accessible
+  register: elevated without pretension
+  density: rich, layered
+  pacing: deliberate, unhurried
+  humor: dry, structural
+  first_person: rare — use 'the system' or 'this project' over 'I' in technical docs
+visual_language:
+  influences:
+  - Edward Tufte — data-ink ratio, information density
+  - Dieter Rams — less but better, systematic restraint
+  - Brutalist web design — raw structural honesty
+  - Academic typography — dense footnotes, clean hierarchy
+  - Terminal aesthetics — monospace precision, green-on-black heritage
+  keywords:
+  - brutalist
+  - typographic
+  - diagrammatic
+  - dense-but-breathable
+  - structural
+  - anti-decorative
+  - systematic
+references:
+- type: description
+  tags:
+  - tone
+  - density
+  - typography
+  notes: Core aesthetic principle
+  captured: '2026-02-13'
+  text: Dense typography with breathing room — academic weight without institutional
+    dryness
+anti_patterns:
+- Generic tech startup gradient backgrounds
+- Stock photography of any kind
+- Emoji-heavy communication
+- Rounded-corner card UI with drop shadows
+- Default Bootstrap/Tailwind aesthetic
+- Hero sections with meaningless abstract illustrations
+- Sans-serif everything — headings need weight
+- Pastel color palettes that signal 'friendly SaaS'
+- Infinite scrolling with no structural anchors
+- Generic AI-generated placeholder text

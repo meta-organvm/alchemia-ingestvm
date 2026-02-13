@@ -1,0 +1,12 @@
+schema_version: "1.0"
+inherits: "meta-organvm/alchemia-ingestvm/taste.yaml"
+organ: "ORGAN-VI"
+name: "Koinonia"
+
+modifiers:
+  palette_shift: "warmer, more inviting — amber accents, softer contrast"
+  typography_emphasis: "balanced serif-sans mix, approachable but not casual"
+  tone_shift: "inclusive, facilitative, question-posing — seminar voice"
+  visual_shift: "circular diagrams, seating arrangements, relational maps, warmth"
+
+specific_references: []

@@ -1,0 +1,12 @@
+schema_version: "1.0"
+inherits: "meta-organvm/alchemia-ingestvm/taste.yaml"
+organ: "ORGAN-II"
+name: "Poiesis"
+
+modifiers:
+  palette_shift: "allow warmer accents — the crimson breathes here, occasional gold"
+  typography_emphasis: "display typefaces for titles, body remains clean — contrast between art and reading"
+  tone_shift: "more evocative, sensory language permitted — but never purple prose"
+  visual_shift: "generative art patterns, visual rhythm, breathing negative space, grid-breaking occasional"
+
+specific_references: []
