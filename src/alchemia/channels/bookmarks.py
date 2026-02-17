@@ -5,7 +5,6 @@ import plistlib
 import subprocess
 from pathlib import Path
 
-
 SAFARI_BOOKMARKS = Path("~/Library/Safari/Bookmarks.plist").expanduser()
 CHROME_BOOKMARKS = Path(
     "~/Library/Application Support/Google/Chrome/Default/Bookmarks"

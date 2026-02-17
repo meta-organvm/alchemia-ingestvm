@@ -12,7 +12,6 @@ Setup:
 The module gracefully degrades if google packages are not installed.
 """
 
-import json
 from datetime import datetime, timezone
 from pathlib import Path
 

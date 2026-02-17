@@ -266,9 +266,9 @@ def cmd_capture(args):
 def cmd_sync(args):
     """Sync all capture channels (bookmarks, notes, AI chats)."""
     from alchemia.aesthetic import add_reference
-    from alchemia.channels.bookmarks import sync_bookmarks
-    from alchemia.channels.apple_notes import export_alchemia_notes
     from alchemia.channels.ai_chats import parse_gemini_visits
+    from alchemia.channels.apple_notes import export_alchemia_notes
+    from alchemia.channels.bookmarks import sync_bookmarks
 
     print("SYNC — Running capture channels...")
 
@@ -277,7 +277,7 @@ def cmd_sync(args):
     bookmarks = sync_bookmarks()
     new_bookmarks = 0
     for bm in bookmarks:
-        entry = add_reference(
+        add_reference(
             ref_type="url",
             value=bm["url"],
             tags=["bookmark", bm["source"]],

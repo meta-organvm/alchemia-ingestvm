@@ -1,9 +1,7 @@
 """Generate PROVENANCE.yaml and provenance-registry.json."""
 
-import json
 from collections import defaultdict
 from datetime import datetime, timezone
-from pathlib import Path
 
 import yaml
 

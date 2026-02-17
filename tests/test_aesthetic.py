@@ -1,9 +1,10 @@
 """Tests for the aesthetic nervous system."""
 
-import yaml
 from pathlib import Path
 
-from alchemia.aesthetic import resolve_aesthetic_chain, format_prompt_injection, add_reference
+import yaml
+
+from alchemia.aesthetic import add_reference, format_prompt_injection, resolve_aesthetic_chain
 
 
 def test_taste_yaml_valid():

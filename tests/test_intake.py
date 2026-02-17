@@ -1,9 +1,7 @@
 """Tests for the INTAKE stage."""
 
-import tempfile
-from pathlib import Path
 
-from alchemia.intake.crawler import crawl, sha256_file, file_metadata
+from alchemia.intake.crawler import crawl, file_metadata, sha256_file
 from alchemia.intake.dedup import mark_duplicates
 
 

@@ -1,10 +1,10 @@
 """Tests for Google Docs sync channel (no network required)."""
 
 from alchemia.channels.google_docs import (
-    _sanitize_filename,
     EXPORT_MIMES,
     GDOC_MIME,
     GSHEET_MIME,
+    _sanitize_filename,
     get_status,
 )
 

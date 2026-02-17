@@ -7,7 +7,11 @@ from alchemia.absorb.name_variants import NAME_VARIANTS
 def _mock_registry():
     return {
         "repos": [
-            {"name": "recursive-engine--generative-entity", "org": "organvm-i-theoria", "organ": "ORGAN-I"},
+            {
+                "name": "recursive-engine--generative-entity",
+                "org": "organvm-i-theoria",
+                "organ": "ORGAN-I",
+            },
             {"name": "showcase-portfolio", "org": "organvm-ii-poiesis", "organ": "ORGAN-II"},
             {"name": "hokage-chess", "org": "organvm-iii-ergon", "organ": "ORGAN-III"},
         ],

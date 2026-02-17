@@ -1,8 +1,8 @@
 """AI Chat parser — extract content from ChatGPT, Claude, and Gemini exports."""
 
 import json
-from pathlib import Path
 from datetime import datetime, timezone
+from pathlib import Path
 
 
 def parse_chatgpt_export(export_dir: Path) -> list[dict]:

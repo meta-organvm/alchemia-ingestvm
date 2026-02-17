@@ -4,7 +4,6 @@ import json
 import subprocess
 from pathlib import Path
 
-
 NOTES_OUTPUT_DIR = Path("~/Workspace/alchemia-ingestvm/data/notes").expanduser()
 
 

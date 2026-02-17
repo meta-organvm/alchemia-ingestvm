@@ -4,10 +4,7 @@ from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
 
-import yaml
-
-from alchemia.aesthetic import load_taste, resolve_aesthetic_chain, format_prompt_injection
-
+from alchemia.aesthetic import format_prompt_injection, load_taste, resolve_aesthetic_chain
 
 ORGAN_MAP = {
     "ORGAN-I": {"name": "Theoria", "domain": "Theory, epistemology, recursion, ontology"},
@@ -66,7 +63,7 @@ def generate_creative_brief(organ: str, taste_path: Path | None = None) -> str:
     """
     chain = resolve_aesthetic_chain(organ=organ, taste_path=taste_path)
     organ_info = ORGAN_MAP.get(organ, {"name": organ, "domain": ""})
-    analysis = analyze_references(taste_path)
+    analyze_references(taste_path)
 
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
@@ -243,7 +240,8 @@ def generate_workflow_integration_example() -> str:
       --jq '.content' | base64 -d)
 
     # Fetch organ-specific aesthetic
-    ORGAN_AESTHETIC=$(gh api repos/${GITHUB_REPOSITORY_OWNER}/.github/contents/organ-aesthetic.yaml \\
+    ORGAN_AESTHETIC=$(gh api \
+      repos/${GITHUB_REPOSITORY_OWNER}/.github/contents/organ-aesthetic.yaml \
       --jq '.content' | base64 -d 2>/dev/null || echo "")
 
     # Combine into a prompt injection block
