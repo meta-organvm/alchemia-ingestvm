@@ -14,7 +14,8 @@ def get_default_branch(org: str, repo: str) -> str:
     """Get the default branch of a repo."""
     result = subprocess.run(
         ["gh", "api", f"/repos/{org}/{repo}", "--jq", ".default_branch"],
-        capture_output=True, text=True,
+        capture_output=True,
+        text=True,
     )
     if result.returncode == 0 and result.stdout.strip():
         return result.stdout.strip()
@@ -25,7 +26,8 @@ def is_repo_archived(org: str, repo: str) -> bool:
     """Check if a repo is archived."""
     result = subprocess.run(
         ["gh", "api", f"/repos/{org}/{repo}", "--jq", ".archived"],
-        capture_output=True, text=True,
+        capture_output=True,
+        text=True,
     )
     return result.stdout.strip() == "true"
 
@@ -34,7 +36,8 @@ def check_file_exists(org: str, repo: str, path: str) -> bool:
     """Check if a file already exists in the repo."""
     result = subprocess.run(
         ["gh", "api", f"/repos/{org}/{repo}/contents/{path}"],
-        capture_output=True, text=True,
+        capture_output=True,
+        text=True,
     )
     return result.returncode == 0
 
@@ -78,12 +81,14 @@ def build_deployment_manifest(entries: list[dict], registry: dict | None = None)
         key = f"{org}/{repo}"
         manifest[key]["org"] = org
         manifest[key]["repo"] = repo
-        manifest[key]["files"].append({
-            "source": entry["path"],
-            "target": target_path,
-            "size": entry.get("size_bytes", 0),
-            "filename": entry["filename"],
-        })
+        manifest[key]["files"].append(
+            {
+                "source": entry["path"],
+                "target": target_path,
+                "size": entry.get("size_bytes", 0),
+                "filename": entry["filename"],
+            }
+        )
 
     return dict(manifest)
 
@@ -128,7 +133,7 @@ def deploy_repo_batch(
 
     # Deploy files in sub-batches
     for i in range(0, len(files), batch_size):
-        batch = files[i:i + batch_size]
+        batch = files[i : i + batch_size]
 
         for file_info in batch:
             source = Path(file_info["source"])
@@ -163,11 +168,18 @@ def deploy_repo_batch(
                     payload["sha"] = existing_sha
 
                 deploy_result = subprocess.run(
-                    ["gh", "api", "-X", "PUT",
-                     f"/repos/{org}/{repo}/contents/{target}",
-                     "--input", "-"],
+                    [
+                        "gh",
+                        "api",
+                        "-X",
+                        "PUT",
+                        f"/repos/{org}/{repo}/contents/{target}",
+                        "--input",
+                        "-",
+                    ],
                     input=json.dumps(payload),
-                    capture_output=True, text=True,
+                    capture_output=True,
+                    text=True,
                 )
                 if deploy_result.returncode == 0:
                     result["deployed"] += 1

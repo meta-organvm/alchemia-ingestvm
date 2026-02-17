@@ -36,16 +36,19 @@ def parse_chatgpt_export(export_dir: Path) -> list[dict]:
                 content_parts.append({"role": role, "text": text[:500]})
 
         if content_parts:
-            results.append({
-                "source": "chatgpt",
-                "title": title,
-                "created": (
-                    datetime.fromtimestamp(create_time, tz=timezone.utc).isoformat()
-                    if create_time else None
-                ),
-                "message_count": len(content_parts),
-                "preview": content_parts[0]["text"][:200] if content_parts else "",
-            })
+            results.append(
+                {
+                    "source": "chatgpt",
+                    "title": title,
+                    "created": (
+                        datetime.fromtimestamp(create_time, tz=timezone.utc).isoformat()
+                        if create_time
+                        else None
+                    ),
+                    "message_count": len(content_parts),
+                    "preview": content_parts[0]["text"][:200] if content_parts else "",
+                }
+            )
 
     return results
 
@@ -77,7 +80,8 @@ def parse_claude_sessions(claude_dir: Path | None = None) -> list[dict]:
                                 text = content
                             elif isinstance(content, list):
                                 text = " ".join(
-                                    p.get("text", "") for p in content
+                                    p.get("text", "")
+                                    for p in content
                                     if isinstance(p, dict) and p.get("type") == "text"
                                 )
                             if text and len(text) > 20:
@@ -86,12 +90,14 @@ def parse_claude_sessions(claude_dir: Path | None = None) -> list[dict]:
                         continue
 
             if messages:
-                results.append({
-                    "source": "claude",
-                    "session_file": str(jsonl_file),
-                    "message_count": len(messages),
-                    "preview": messages[0][:200] if messages else "",
-                })
+                results.append(
+                    {
+                        "source": "claude",
+                        "session_file": str(jsonl_file),
+                        "message_count": len(messages),
+                        "preview": messages[0][:200] if messages else "",
+                    }
+                )
         except OSError:
             continue
 
@@ -110,17 +116,21 @@ def parse_gemini_visits(intake_dir: Path) -> list[dict]:
             if isinstance(data, list):
                 for item in data[:10]:  # Limit to first 10 entries
                     if isinstance(item, dict):
-                        results.append({
-                            "source": "gemini",
-                            "file": str(gfile),
-                            "preview": str(item)[:200],
-                        })
+                        results.append(
+                            {
+                                "source": "gemini",
+                                "file": str(gfile),
+                                "preview": str(item)[:200],
+                            }
+                        )
             elif isinstance(data, dict):
-                results.append({
-                    "source": "gemini",
-                    "file": str(gfile),
-                    "preview": str(data)[:200],
-                })
+                results.append(
+                    {
+                        "source": "gemini",
+                        "file": str(gfile),
+                        "preview": str(data)[:200],
+                    }
+                )
         except (json.JSONDecodeError, OSError):
             continue
 

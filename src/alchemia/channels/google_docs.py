@@ -38,6 +38,7 @@ def _check_dependencies() -> bool:
     try:
         import google.auth  # noqa: F401
         import googleapiclient  # noqa: F401
+
         return True
     except ImportError:
         return False
@@ -133,9 +134,7 @@ def _find_alchemia_folder(service) -> str | None:
         "and mimeType = 'application/vnd.google-apps.folder' "
         "and trashed = false"
     )
-    results = service.files().list(
-        q=query, fields="files(id, name)", pageSize=5
-    ).execute()
+    results = service.files().list(q=query, fields="files(id, name)", pageSize=5).execute()
 
     files = results.get("files", [])
     if files:
@@ -166,12 +165,16 @@ def list_docs(folder_name: str | None = None) -> list[dict]:
     page_token = None
 
     while True:
-        results = service.files().list(
-            q=query,
-            fields="nextPageToken, files(id, name, mimeType, modifiedTime, createdTime)",
-            pageSize=100,
-            pageToken=page_token,
-        ).execute()
+        results = (
+            service.files()
+            .list(
+                q=query,
+                fields="nextPageToken, files(id, name, mimeType, modifiedTime, createdTime)",
+                pageSize=100,
+                pageToken=page_token,
+            )
+            .execute()
+        )
 
         all_files.extend(results.get("files", []))
         page_token = results.get("nextPageToken")
@@ -241,17 +244,17 @@ def sync_google_docs(output_dir: Path | None = None) -> list[dict]:
 
         # Skip if local copy is newer than remote
         if out_path.exists():
-            local_mtime = datetime.fromtimestamp(
-                out_path.stat().st_mtime, tz=timezone.utc
-            )
+            local_mtime = datetime.fromtimestamp(out_path.stat().st_mtime, tz=timezone.utc)
             try:
                 remote_mtime = datetime.fromisoformat(modified.replace("Z", "+00:00"))
                 if local_mtime >= remote_mtime:
-                    results.append({
-                        "name": name,
-                        "status": "up_to_date",
-                        "path": str(out_path),
-                    })
+                    results.append(
+                        {
+                            "name": name,
+                            "status": "up_to_date",
+                            "path": str(out_path),
+                        }
+                    )
                     continue
             except (ValueError, TypeError):
                 pass  # Can't parse remote time, re-download
@@ -273,19 +276,23 @@ def sync_google_docs(output_dir: Path | None = None) -> list[dict]:
             else:
                 out_path.write_bytes(content)
 
-            results.append({
-                "name": name,
-                "status": "synced",
-                "path": str(out_path),
-                "mime_type": mime,
-                "modified": modified,
-            })
+            results.append(
+                {
+                    "name": name,
+                    "status": "synced",
+                    "path": str(out_path),
+                    "mime_type": mime,
+                    "modified": modified,
+                }
+            )
         else:
-            results.append({
-                "name": name,
-                "status": "failed",
-                "error": "Could not export or download",
-            })
+            results.append(
+                {
+                    "name": name,
+                    "status": "failed",
+                    "error": "Could not export or download",
+                }
+            )
 
     return results
 
@@ -293,9 +300,9 @@ def sync_google_docs(output_dir: Path | None = None) -> list[dict]:
 def _sanitize_filename(name: str) -> str:
     """Sanitize a filename for local storage."""
     # Replace problematic characters
-    for char in ['/', '\\', ':', '*', '?', '"', '<', '>', '|']:
-        name = name.replace(char, '-')
-    return name.strip('. ')
+    for char in ["/", "\\", ":", "*", "?", '"', "<", ">", "|"]:
+        name = name.replace(char, "-")
+    return name.strip(". ")
 
 
 def get_status() -> dict:

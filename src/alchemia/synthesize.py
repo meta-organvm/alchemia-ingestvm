@@ -85,12 +85,14 @@ def generate_creative_brief(organ: str, taste_path: Path | None = None) -> str:
     # Palette
     palette = chain.get("palette", {})
     if palette:
-        lines.extend([
-            "## 2. Color Palette",
-            "",
-            "| Role | Value | Usage |",
-            "|------|-------|-------|",
-        ])
+        lines.extend(
+            [
+                "## 2. Color Palette",
+                "",
+                "| Role | Value | Usage |",
+                "|------|-------|-------|",
+            ]
+        )
         for role, value in palette.items():
             lines.append(f"| {role} | `{value}` | {role.replace('_', ' ').title()} |")
         lines.append("")
@@ -103,10 +105,12 @@ def generate_creative_brief(organ: str, taste_path: Path | None = None) -> str:
     # Typography
     typo = chain.get("typography", {})
     if typo:
-        lines.extend([
-            "## 3. Typography",
-            "",
-        ])
+        lines.extend(
+            [
+                "## 3. Typography",
+                "",
+            ]
+        )
         for key, value in typo.items():
             lines.append(f"- **{key.replace('_', ' ').title()}:** {value}")
         mods = chain.get("organ_modifiers", {})
@@ -117,10 +121,12 @@ def generate_creative_brief(organ: str, taste_path: Path | None = None) -> str:
     # Tone
     tone = chain.get("tone", {})
     if tone:
-        lines.extend([
-            "## 4. Tone & Voice",
-            "",
-        ])
+        lines.extend(
+            [
+                "## 4. Tone & Voice",
+                "",
+            ]
+        )
         for key, value in tone.items():
             lines.append(f"- **{key.replace('_', ' ').title()}:** {value}")
         mods = chain.get("organ_modifiers", {})
@@ -131,10 +137,12 @@ def generate_creative_brief(organ: str, taste_path: Path | None = None) -> str:
     # Visual language
     visual = chain.get("visual_language", {})
     if visual:
-        lines.extend([
-            "## 5. Visual Language",
-            "",
-        ])
+        lines.extend(
+            [
+                "## 5. Visual Language",
+                "",
+            ]
+        )
         influences = visual.get("influences", [])
         if influences:
             lines.append("**Influences:**")
@@ -153,20 +161,22 @@ def generate_creative_brief(organ: str, taste_path: Path | None = None) -> str:
     # References
     refs = chain.get("references", [])
     if refs:
-        lines.extend([
-            "## 6. Accumulated References",
-            "",
-            f"Total references: {len(refs)}",
-            "",
-        ])
+        lines.extend(
+            [
+                "## 6. Accumulated References",
+                "",
+                f"Total references: {len(refs)}",
+                "",
+            ]
+        )
         for ref in refs:
             ref_type = ref.get("type", "unknown")
             if ref_type == "url":
-                source = ref.get('source', 'URL')
-                notes = ref.get('notes', '')
+                source = ref.get("source", "URL")
+                notes = ref.get("notes", "")
                 lines.append(f"- [{source}]({source}) — {notes}")
             elif ref_type == "description":
-                lines.append(f"- *\"{ref.get('text', '')}\"* — {ref.get('notes', '')}")
+                lines.append(f'- *"{ref.get("text", "")}"* — {ref.get("notes", "")}')
             elif ref_type == "screenshot":
                 lines.append(f"- Screenshot: `{ref.get('path', '')}` — {ref.get('notes', '')}")
             tags = ref.get("tags", [])
@@ -177,26 +187,30 @@ def generate_creative_brief(organ: str, taste_path: Path | None = None) -> str:
     # Anti-patterns
     anti = chain.get("anti_patterns", [])
     if anti:
-        lines.extend([
-            "## 7. Anti-Patterns (AVOID)",
-            "",
-        ])
+        lines.extend(
+            [
+                "## 7. Anti-Patterns (AVOID)",
+                "",
+            ]
+        )
         for a in anti:
             lines.append(f"- {a}")
         lines.append("")
 
     # Prompt injection block
-    lines.extend([
-        "---",
-        "",
-        "## Appendix: AI Prompt Injection Block",
-        "",
-        "Copy this block into AI generation prompts to enforce aesthetic guidelines:",
-        "",
-        "```markdown",
-        format_prompt_injection(chain),
-        "```",
-    ])
+    lines.extend(
+        [
+            "---",
+            "",
+            "## Appendix: AI Prompt Injection Block",
+            "",
+            "Copy this block into AI generation prompts to enforce aesthetic guidelines:",
+            "",
+            "```markdown",
+            format_prompt_injection(chain),
+            "```",
+        ]
+    )
 
     return "\n".join(lines)
 
@@ -229,7 +243,7 @@ def generate_workflow_integration_example() -> str:
 
     This demonstrates how autonomous AI agents would use the taste profile.
     """
-    return '''# Example GitHub Actions step: consume the aesthetic chain
+    return """# Example GitHub Actions step: consume the aesthetic chain
 # Add this to any workflow that generates content (READMEs, essays, etc.)
 
 - name: Fetch aesthetic chain
@@ -263,4 +277,4 @@ def generate_workflow_integration_example() -> str:
     # Include aesthetic-context.md in the AI prompt
     cat aesthetic-context.md >> generation-prompt.md
     # ... rest of generation logic
-'''
+"""

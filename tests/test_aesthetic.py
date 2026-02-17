@@ -48,11 +48,15 @@ def test_format_prompt_injection():
 
 def test_add_reference(tmp_path):
     taste = tmp_path / "taste.yaml"
-    taste.write_text(yaml.dump({
-        "schema_version": "1.0",
-        "references": [],
-        "anti_patterns": [],
-    }))
+    taste.write_text(
+        yaml.dump(
+            {
+                "schema_version": "1.0",
+                "references": [],
+                "anti_patterns": [],
+            }
+        )
+    )
     entry = add_reference("note", "Test note", tags=["test"], path=taste)
     assert entry["type"] == "description"
     assert entry["text"] == "Test note"

@@ -1,6 +1,5 @@
 """Tests for the INTAKE stage."""
 
-
 from alchemia.intake.crawler import crawl, file_metadata, sha256_file
 from alchemia.intake.dedup import mark_duplicates
 
@@ -75,7 +74,7 @@ def test_mark_duplicates():
     result = mark_duplicates(entries)
     # Deeper path wins
     assert result[0]["duplicate"] is False  # /a/deep/file.md (depth 2)
-    assert result[1]["duplicate"] is True   # /b/file.md (depth 0)
+    assert result[1]["duplicate"] is True  # /b/file.md (depth 0)
     assert result[2]["duplicate"] is False  # unique
 
 

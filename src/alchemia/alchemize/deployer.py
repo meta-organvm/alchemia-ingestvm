@@ -7,8 +7,10 @@ from pathlib import Path
 
 
 def gh_api(
-    method: str, endpoint: str,
-    data: dict | None = None, silent: bool = False,
+    method: str,
+    endpoint: str,
+    data: dict | None = None,
+    silent: bool = False,
 ) -> dict | str | None:
     """Call GitHub API via gh CLI."""
     cmd = ["gh", "api", "-X", method, endpoint]
@@ -94,11 +96,10 @@ def put_file(
         payload["branch"] = branch
 
     result = subprocess.run(
-        ["gh", "api", "-X", "PUT",
-         f"/repos/{org}/{repo}/contents/{path}",
-         "--input", "-"],
+        ["gh", "api", "-X", "PUT", f"/repos/{org}/{repo}/contents/{path}", "--input", "-"],
         input=json.dumps(payload),
-        capture_output=True, text=True,
+        capture_output=True,
+        text=True,
     )
     if result.returncode != 0:
         err = result.stderr.strip()[:200]

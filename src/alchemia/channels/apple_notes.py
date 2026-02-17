@@ -19,7 +19,7 @@ def export_alchemia_notes() -> list[dict]:
     NOTES_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
     # AppleScript to export notes from "Alchemia" folder
-    applescript = '''
+    applescript = """
     tell application "Notes"
         set output to ""
         try
@@ -42,12 +42,14 @@ def export_alchemia_notes() -> list[dict]:
         end try
         return output
     end tell
-    '''
+    """
 
     try:
         result = subprocess.run(
             ["osascript", "-e", applescript],
-            capture_output=True, text=True, timeout=30,
+            capture_output=True,
+            text=True,
+            timeout=30,
         )
     except subprocess.TimeoutExpired:
         print("  WARNING: Apple Notes export timed out")
@@ -57,8 +59,7 @@ def export_alchemia_notes() -> list[dict]:
         err = result.stdout.strip() or result.stderr.strip()
         if "folder" in err.lower() and "alchemia" in err.lower():
             print(
-                "  INFO: No 'Alchemia' folder found in Apple Notes"
-                " — create one to use this channel"
+                "  INFO: No 'Alchemia' folder found in Apple Notes — create one to use this channel"
             )
         else:
             print(f"  WARNING: Apple Notes export failed: {err[:200]}")
@@ -100,7 +101,9 @@ def export_note_body(note_title: str) -> str:
     try:
         result = subprocess.run(
             ["osascript", "-e", applescript],
-            capture_output=True, text=True, timeout=15,
+            capture_output=True,
+            text=True,
+            timeout=15,
         )
         if result.returncode == 0:
             return result.stdout

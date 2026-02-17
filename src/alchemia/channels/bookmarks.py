@@ -57,12 +57,14 @@ def _walk_safari_tree(children: list, path: list, results: list):
             if INSPIRATIONS_FOLDER in path:
                 url = item.get("URLString", "")
                 if url:
-                    results.append({
-                        "source": "safari",
-                        "url": url,
-                        "title": title,
-                        "folder_path": "/".join(path),
-                    })
+                    results.append(
+                        {
+                            "source": "safari",
+                            "url": url,
+                            "title": title,
+                            "folder_path": "/".join(path),
+                        }
+                    )
 
 
 def parse_chrome_bookmarks() -> list[dict]:
@@ -104,12 +106,14 @@ def _walk_chrome_tree(node: dict, path: list, results: list):
         if INSPIRATIONS_FOLDER in path:
             url = node.get("url", "")
             if url:
-                results.append({
-                    "source": "chrome",
-                    "url": url,
-                    "title": name,
-                    "folder_path": "/".join(path),
-                })
+                results.append(
+                    {
+                        "source": "chrome",
+                        "url": url,
+                        "title": name,
+                        "folder_path": "/".join(path),
+                    }
+                )
 
 
 def sync_bookmarks() -> list[dict]:

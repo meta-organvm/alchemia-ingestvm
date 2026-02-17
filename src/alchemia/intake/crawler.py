@@ -93,7 +93,8 @@ def crawl(source_dirs: list[Path]) -> list[dict]:
             dp = Path(dirpath)
             is_toplevel = dp == root_dir
             dirnames[:] = [
-                d for d in dirnames
+                d
+                for d in dirnames
                 if d not in SKIP_DIRS
                 and not d.startswith(".")
                 and not (is_toplevel and d in SKIP_TOPLEVEL)

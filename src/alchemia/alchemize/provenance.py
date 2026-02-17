@@ -20,16 +20,18 @@ def generate_provenance_yaml(entries: list[dict], repo_name: str, org: str) -> s
         if classification.get("target_org") != org:
             continue
 
-        materials.append({
-            "filename": entry["filename"],
-            "source_path": entry["path"],
-            "sha256": entry["sha256"],
-            "size_bytes": entry["size_bytes"],
-            "last_modified": entry["last_modified"],
-            "classification_rule": classification.get("rule_name", ""),
-            "confidence": classification.get("confidence", 0),
-            "target_subdir": classification.get("target_subdir", ""),
-        })
+        materials.append(
+            {
+                "filename": entry["filename"],
+                "source_path": entry["path"],
+                "sha256": entry["sha256"],
+                "size_bytes": entry["size_bytes"],
+                "last_modified": entry["last_modified"],
+                "classification_rule": classification.get("rule_name", ""),
+                "confidence": classification.get("confidence", 0),
+                "target_subdir": classification.get("target_subdir", ""),
+            }
+        )
 
     if not materials:
         return ""
@@ -59,8 +61,8 @@ def generate_provenance_registry(entries: list[dict]) -> dict:
         if classification.get("status") != "CLASSIFIED":
             continue
 
-        org = classification.get('target_org', '')
-        repo = classification.get('target_repo', 'unspecified')
+        org = classification.get("target_org", "")
+        repo = classification.get("target_repo", "unspecified")
         target_key = f"{org}/{repo}"
         source_path = entry["path"]
 
@@ -71,12 +73,14 @@ def generate_provenance_registry(entries: list[dict]) -> dict:
             "confidence": classification.get("confidence", 0),
         }
 
-        repo_to_sources[target_key].append({
-            "source_path": source_path,
-            "filename": entry["filename"],
-            "sha256": entry["sha256"],
-            "size_bytes": entry["size_bytes"],
-        })
+        repo_to_sources[target_key].append(
+            {
+                "source_path": source_path,
+                "filename": entry["filename"],
+                "sha256": entry["sha256"],
+                "size_bytes": entry["size_bytes"],
+            }
+        )
 
     return {
         "schema_version": "1.0",

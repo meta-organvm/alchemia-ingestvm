@@ -124,9 +124,12 @@ def cmd_alchemize(args):
     if args.organ:
         organ_filter = f"ORGAN-{args.organ.upper()}"
         plan = {
-            k: v for k, v in plan.items()
-            if any(e.get("classification", {}).get("target_organ") == organ_filter
-                   for e in v["deploy"] + v["convert"])
+            k: v
+            for k, v in plan.items()
+            if any(
+                e.get("classification", {}).get("target_organ") == organ_filter
+                for e in v["deploy"] + v["convert"]
+            )
         }
         print(f"    Filtered to organ {args.organ}: {len(plan)} repos")
 
@@ -158,7 +161,8 @@ def cmd_alchemize(args):
     if args.organ:
         organ_filter = f"ORGAN-{args.organ.upper()}"
         manifest = {
-            k: v for k, v in manifest.items()
+            k: v
+            for k, v in manifest.items()
             if any(
                 e.get("classification", {}).get("target_organ") == organ_filter
                 for e in entries
@@ -181,7 +185,9 @@ def cmd_alchemize(args):
         print(f"\n  {repo_key}: {len(files)} files")
 
         result = deploy_repo_batch(
-            org, repo, files,
+            org,
+            repo,
+            files,
             force=args.force,
             batch_size=args.batch_size,
         )
@@ -190,9 +196,9 @@ def cmd_alchemize(args):
         total_skipped += result["skipped"]
         total_failed += result["failed"]
 
-        deployed = result['deployed']
-        skipped = result['skipped']
-        failed = result['failed']
+        deployed = result["deployed"]
+        skipped = result["skipped"]
+        failed = result["failed"]
         print(f"    deployed={deployed} skipped={skipped} failed={failed}")
         if result.get("errors"):
             for err in result["errors"][:3]:
@@ -411,7 +417,8 @@ def main():
     # alchemize
     p_alch = sub.add_parser("alchemize", help="Transform + deploy to repos")
     p_alch.add_argument(
-        "--mapping", default="data/absorb-mapping.json",
+        "--mapping",
+        default="data/absorb-mapping.json",
         help="Classified mapping file",
     )
     p_alch.add_argument("--dry-run", action="store_true")

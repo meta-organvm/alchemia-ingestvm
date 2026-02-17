@@ -7,15 +7,28 @@ from pathlib import Path
 
 # File handling rules per the plan
 DEPLOY_DIRECT = {
-    ".md", ".txt", ".py", ".js", ".jsx", ".html", ".yaml", ".yml", ".json",
-    ".ts", ".tsx", ".sh", ".css", ".svg", ".astro",
+    ".md",
+    ".txt",
+    ".py",
+    ".js",
+    ".jsx",
+    ".html",
+    ".yaml",
+    ".yml",
+    ".json",
+    ".ts",
+    ".tsx",
+    ".sh",
+    ".css",
+    ".svg",
+    ".astro",
 }
 CONVERT_DOCX = {".docx"}
 DEPLOY_SMALL_BINARY = {".pdf", ".png", ".jpg", ".jpeg", ".gif"}
 REFERENCE_ONLY = {".gdoc", ".zip", ".pages", ".numbers", ".plist", ".tar.gz"}
 
 MAX_BINARY_SIZE = 5 * 1024 * 1024  # 5MB
-MAX_IMAGE_SIZE = 2 * 1024 * 1024   # 2MB
+MAX_IMAGE_SIZE = 2 * 1024 * 1024  # 2MB
 
 
 def classify_action(entry: dict) -> str:
