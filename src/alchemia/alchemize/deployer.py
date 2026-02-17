@@ -6,7 +6,10 @@ import subprocess
 from pathlib import Path
 
 
-def gh_api(method: str, endpoint: str, data: dict | None = None, silent: bool = False) -> dict | str | None:
+def gh_api(
+    method: str, endpoint: str,
+    data: dict | None = None, silent: bool = False,
+) -> dict | str | None:
     """Call GitHub API via gh CLI."""
     cmd = ["gh", "api", "-X", method, endpoint]
     if data:
@@ -137,6 +140,7 @@ def deploy_file(
         print(f"    ERROR reading {source_path}: {e}")
         return result
 
-    success = put_file(org, repo, target_path, content, f"chore: ingest source material — {source_path.name}", force=force)
+    msg = f"chore: ingest source material — {source_path.name}"
+    success = put_file(org, repo, target_path, content, msg, force=force)
     result["status"] = "deployed" if success else "failed"
     return result

@@ -39,7 +39,10 @@ def parse_chatgpt_export(export_dir: Path) -> list[dict]:
             results.append({
                 "source": "chatgpt",
                 "title": title,
-                "created": datetime.fromtimestamp(create_time, tz=timezone.utc).isoformat() if create_time else None,
+                "created": (
+                    datetime.fromtimestamp(create_time, tz=timezone.utc).isoformat()
+                    if create_time else None
+                ),
                 "message_count": len(content_parts),
                 "preview": content_parts[0]["text"][:200] if content_parts else "",
             })

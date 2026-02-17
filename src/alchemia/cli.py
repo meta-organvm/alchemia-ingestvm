@@ -95,9 +95,7 @@ def cmd_alchemize(args):
     import json
 
     from alchemia.absorb.registry_loader import load_registry
-    from alchemia.alchemize.deployer import deploy_file, is_archived
     from alchemia.alchemize.provenance import generate_provenance_registry, get_deployment_plan
-    from alchemia.alchemize.transformer import classify_action, get_deploy_path
 
     mapping_path = Path(args.mapping)
     print("ALCHEMIZE — Loading classified inventory...")
@@ -115,7 +113,7 @@ def cmd_alchemize(args):
     total_reference = sum(len(v["reference"]) for v in plan.values())
     total_skip = sum(len(v["skip"]) for v in plan.values())
 
-    print(f"\n  Deployment plan:")
+    print("\n  Deployment plan:")
     print(f"    Deploy directly: {total_deploy}")
     print(f"    Convert (docx→md): {total_convert}")
     print(f"    Reference only: {total_reference}")
@@ -153,7 +151,6 @@ def cmd_alchemize(args):
 
     # Actual deployment
     from alchemia.alchemize.batch_deployer import build_deployment_manifest, deploy_repo_batch
-    from alchemia.alchemize.provenance import generate_provenance_yaml
 
     manifest = build_deployment_manifest(entries, registry)
 
@@ -193,7 +190,10 @@ def cmd_alchemize(args):
         total_skipped += result["skipped"]
         total_failed += result["failed"]
 
-        print(f"    deployed={result['deployed']} skipped={result['skipped']} failed={result['failed']}")
+        deployed = result['deployed']
+        skipped = result['skipped']
+        failed = result['failed']
+        print(f"    deployed={deployed} skipped={skipped} failed={failed}")
         if result.get("errors"):
             for err in result["errors"][:3]:
                 print(f"    ERROR: {err}")
@@ -309,7 +309,10 @@ def cmd_sync(args):
         synced = sum(1 for d in gdocs if d["status"] == "synced")
         up_to_date = sum(1 for d in gdocs if d["status"] == "up_to_date")
         failed = sum(1 for d in gdocs if d["status"] == "failed")
-        print(f"    {len(gdocs)} docs in Alchemia folder: {synced} synced, {up_to_date} up-to-date, {failed} failed")
+        print(
+            f"    {len(gdocs)} docs in Alchemia folder:"
+            f" {synced} synced, {up_to_date} up-to-date, {failed} failed"
+        )
         for doc in gdocs:
             print(f"    - {doc['name']} [{doc['status']}]")
 
@@ -407,7 +410,10 @@ def main():
 
     # alchemize
     p_alch = sub.add_parser("alchemize", help="Transform + deploy to repos")
-    p_alch.add_argument("--mapping", default="data/absorb-mapping.json", help="Classified mapping file")
+    p_alch.add_argument(
+        "--mapping", default="data/absorb-mapping.json",
+        help="Classified mapping file",
+    )
     p_alch.add_argument("--dry-run", action="store_true")
     p_alch.add_argument("--force", action="store_true", help="Overwrite existing files")
     p_alch.add_argument("--organ", help="Limit to specific organ (e.g. I, II)")

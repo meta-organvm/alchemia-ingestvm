@@ -6,7 +6,7 @@ import subprocess
 from collections import defaultdict
 from pathlib import Path
 
-from alchemia.alchemize.transformer import classify_action, get_deploy_path, sanitize_filename
+from alchemia.alchemize.transformer import classify_action, get_deploy_path
 from alchemia.absorb.registry_loader import load_registry
 
 

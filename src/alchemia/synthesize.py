@@ -72,17 +72,17 @@ def generate_creative_brief(organ: str, taste_path: Path | None = None) -> str:
 
     lines = [
         f"# Creative Brief: {organ_info['name']} ({organ})",
-        f"",
+        "",
         f"> Generated {now} by Alchemia Synthesis Engine",
         f"> Domain: {organ_info['domain']}",
-        f"",
-        f"---",
-        f"",
-        f"## 1. Identity",
-        f"",
+        "",
+        "---",
+        "",
+        "## 1. Identity",
+        "",
         f"**Organ:** {organ} — {organ_info['name']}",
         f"**Domain:** {organ_info['domain']}",
-        f"",
+        "",
     ]
 
     # Palette
@@ -165,7 +165,9 @@ def generate_creative_brief(organ: str, taste_path: Path | None = None) -> str:
         for ref in refs:
             ref_type = ref.get("type", "unknown")
             if ref_type == "url":
-                lines.append(f"- [{ref.get('source', 'URL')}]({ref.get('source', '')}) — {ref.get('notes', '')}")
+                source = ref.get('source', 'URL')
+                notes = ref.get('notes', '')
+                lines.append(f"- [{source}]({source}) — {notes}")
             elif ref_type == "description":
                 lines.append(f"- *\"{ref.get('text', '')}\"* — {ref.get('notes', '')}")
             elif ref_type == "screenshot":

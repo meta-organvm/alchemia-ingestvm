@@ -98,7 +98,8 @@ def resolve_aesthetic_chain(
 
     # Layer organ aesthetic
     if organ:
-        organ_dir = organ_aesthetics_dir or (taste_path or TASTE_PATH).parent / "data" / "organ-aesthetics"
+        default_dir = (taste_path or TASTE_PATH).parent / "data" / "organ-aesthetics"
+        organ_dir = organ_aesthetics_dir or default_dir
         organ_map = {
             "ORGAN-I": "organ-i-theoria.yaml",
             "ORGAN-II": "organ-ii-poiesis.yaml",

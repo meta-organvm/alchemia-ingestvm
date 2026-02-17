@@ -1,6 +1,5 @@
 """Tests for the INTAKE stage."""
 
-import json
 import tempfile
 from pathlib import Path
 

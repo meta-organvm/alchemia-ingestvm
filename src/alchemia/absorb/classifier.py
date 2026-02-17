@@ -1,7 +1,5 @@
 """ABSORB Stage — Classify files to target organ/org/repo using 7 priority rules."""
 
-import csv
-import re
 from pathlib import Path
 
 from alchemia.absorb.name_variants import (
@@ -147,7 +145,6 @@ def classify_entry(entry: dict, registry: dict) -> dict:
     """
     toplevel = _get_toplevel_dir(entry)
     by_name = registry["by_name"]
-    by_org = registry["by_org"]
     ext = entry.get("extension", "")
     subdir = _subdir_for_ext(ext)
 
