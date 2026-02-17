@@ -1,0 +1,24 @@
+schema_version: "1.0"
+organ: Meta
+org: meta-organvm
+repo: alchemia-ingestvm
+
+metadata:
+  description: "Material ingestion pipeline and aesthetic nervous system"
+  language: python
+  implementation_status: ACTIVE
+
+agents: []
+
+produces:
+  - classified-artifacts
+  - deployment-manifests
+  - provenance-records
+  - creative-briefs
+  - aesthetic-chains
+
+consumes:
+  - source: organvm-corpvs-testamentvm
+    artifact: registry-v2.json
+
+subscriptions: []
