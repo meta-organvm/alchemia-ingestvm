@@ -364,20 +364,14 @@ def cmd_gdocs_status(args):
 
 DEFAULT_SOURCE_DIRS = [
     "~/Workspace/intake",
-    "~/Workspace/organvm-pactvm",
-    "~/Workspace/ORG-IV-orchestration-staging",
-    "~/Workspace/ORG-V-public-process-staging",
-    "~/Workspace/ORG-VI-community-staging",
-    "~/Workspace/ORG-VII-marketing-staging",
-    "~/Workspace/metasystem-core",
-    "~/Workspace/auto-rev-epistemic-engine_spec",
-    "~/Workspace/all-fusion-engine",
-    "~/Workspace/4444J99",
-    "~/Workspace/4444JPP",
-    "~/Workspace/4444j99-organs",
-    "~/Workspace/4444j99-orchestration",
-    "~/Workspace/4444j99-community",
-    "~/Workspace/4444j99-marketing",
+    "~/Workspace/meta-organvm",
+    "~/Workspace/organvm-i-theoria",
+    "~/Workspace/organvm-ii-poiesis",
+    "~/Workspace/organvm-iii-ergon",
+    "~/Workspace/organvm-iv-taxis",
+    "~/Workspace/organvm-v-logos",
+    "~/Workspace/organvm-vi-koinonia",
+    "~/Workspace/organvm-vii-kerygma",
 ]
 
 
@@ -398,7 +392,7 @@ def main():
     )
     p_intake.add_argument(
         "--manifest",
-        default=str(Path("~/Workspace/organvm-pactvm/MANIFEST_INDEX_TABLE.csv").expanduser()),
+        default=str(Path("~/Workspace/meta-organvm/organvm-corpvs-testamentvm/MANIFEST_INDEX_TABLE.csv").expanduser()),
         help="Path to MANIFEST_INDEX_TABLE.csv",
     )
     p_intake.add_argument(
