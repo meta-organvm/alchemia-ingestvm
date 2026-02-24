@@ -4,10 +4,15 @@ import json
 import os
 from pathlib import Path
 
-REGISTRY_PATH = Path(os.environ.get(
-    "ORGANVM_CORPUS_DIR",
-    str(Path("~/Workspace/meta-organvm/organvm-corpvs-testamentvm").expanduser()),
-)) / "registry-v2.json"
+REGISTRY_PATH = (
+    Path(
+        os.environ.get(
+            "ORGANVM_CORPUS_DIR",
+            str(Path("~/Workspace/meta-organvm/organvm-corpvs-testamentvm").expanduser()),
+        )
+    )
+    / "registry-v2.json"
+)
 
 
 def load_registry(path: Path | None = None) -> dict:

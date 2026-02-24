@@ -392,7 +392,11 @@ def main():
     )
     p_intake.add_argument(
         "--manifest",
-        default=str(Path("~/Workspace/meta-organvm/organvm-corpvs-testamentvm/MANIFEST_INDEX_TABLE.csv").expanduser()),
+        default=str(
+            Path(
+                "~/Workspace/meta-organvm/organvm-corpvs-testamentvm/MANIFEST_INDEX_TABLE.csv"
+            ).expanduser()
+        ),
         help="Path to MANIFEST_INDEX_TABLE.csv",
     )
     p_intake.add_argument(
