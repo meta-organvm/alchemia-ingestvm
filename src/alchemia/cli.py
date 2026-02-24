@@ -231,7 +231,7 @@ def cmd_status(args):
 def cmd_review(args):
     """Interactive review of PENDING_REVIEW items."""
     print("REVIEW — Not yet implemented (Phase B)")
-    sys.exit(1)
+    return
 
 
 def cmd_synthesize(args):
