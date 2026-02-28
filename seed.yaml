@@ -7,6 +7,7 @@ metadata:
   description: "Material ingestion pipeline and aesthetic nervous system"
   language: python
   implementation_status: ACTIVE
+  promotion_status: CANDIDATE
 
 agents: []
 
