@@ -87,7 +87,7 @@ def build_deployment_manifest(entries: list[dict], registry: dict | None = None)
                 "target": target_path,
                 "size": entry.get("size_bytes", 0),
                 "filename": entry["filename"],
-            }
+            },
         )
 
     return dict(manifest)

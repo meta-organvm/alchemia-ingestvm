@@ -14,7 +14,7 @@ def parse_chatgpt_export(export_dir: Path) -> list[dict]:
     if not convos_file.exists():
         return []
 
-    with open(convos_file, encoding="utf-8") as f:
+    with Path(convos_file).open(encoding="utf-8") as f:
         conversations = json.load(f)
 
     results = []
@@ -25,7 +25,7 @@ def parse_chatgpt_export(export_dir: Path) -> list[dict]:
 
         # Extract key message content
         content_parts = []
-        for msg_id, msg_data in messages.items():
+        for _msg_id, msg_data in messages.items():
             message = msg_data.get("message")
             if not message:
                 continue
@@ -47,7 +47,7 @@ def parse_chatgpt_export(export_dir: Path) -> list[dict]:
                     ),
                     "message_count": len(content_parts),
                     "preview": content_parts[0]["text"][:200] if content_parts else "",
-                }
+                },
             )
 
     return results
@@ -66,7 +66,7 @@ def parse_claude_sessions(claude_dir: Path | None = None) -> list[dict]:
     for jsonl_file in claude_dir.rglob("*.jsonl"):
         try:
             messages = []
-            with open(jsonl_file, encoding="utf-8") as f:
+            with Path(jsonl_file).open(encoding="utf-8") as f:
                 for line in f:
                     line = line.strip()
                     if not line:
@@ -96,7 +96,7 @@ def parse_claude_sessions(claude_dir: Path | None = None) -> list[dict]:
                         "session_file": str(jsonl_file),
                         "message_count": len(messages),
                         "preview": messages[0][:200] if messages else "",
-                    }
+                    },
                 )
         except OSError:
             continue
@@ -109,7 +109,7 @@ def parse_gemini_visits(intake_dir: Path) -> list[dict]:
     results = []
     for gfile in intake_dir.glob("_gemini_visit_*.json"):
         try:
-            with open(gfile, encoding="utf-8") as f:
+            with Path(gfile).open(encoding="utf-8") as f:
                 data = json.load(f)
 
             # Gemini exports vary in structure; extract what we can
@@ -121,7 +121,7 @@ def parse_gemini_visits(intake_dir: Path) -> list[dict]:
                                 "source": "gemini",
                                 "file": str(gfile),
                                 "preview": str(item)[:200],
-                            }
+                            },
                         )
             elif isinstance(data, dict):
                 results.append(
@@ -129,7 +129,7 @@ def parse_gemini_visits(intake_dir: Path) -> list[dict]:
                         "source": "gemini",
                         "file": str(gfile),
                         "preview": str(data)[:200],
-                    }
+                    },
                 )
         except (json.JSONDecodeError, OSError):
             continue

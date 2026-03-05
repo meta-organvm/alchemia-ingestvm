@@ -172,7 +172,7 @@ def _subdir_for_ext(ext: str) -> str:
 def _read_first_lines(path: str, n: int = 50) -> str:
     """Read first N lines of a text file for keyword scanning."""
     try:
-        with open(path, "r", encoding="utf-8", errors="ignore") as f:
+        with Path(path).open("r", encoding="utf-8", errors="ignore") as f:
             lines = []
             for i, line in enumerate(f):
                 if i >= n:

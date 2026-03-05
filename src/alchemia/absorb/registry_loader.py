@@ -9,7 +9,7 @@ REGISTRY_PATH = (
         os.environ.get(
             "ORGANVM_CORPUS_DIR",
             str(Path("~/Workspace/meta-organvm/organvm-corpvs-testamentvm").expanduser()),
-        )
+        ),
     )
     / "registry-v2.json"
 )
@@ -25,7 +25,7 @@ def load_registry(path: Path | None = None) -> dict:
       - archived: set of archived repo names
     """
     path = path or REGISTRY_PATH
-    with open(path, encoding="utf-8") as f:
+    with Path(path).open(encoding="utf-8") as f:
         reg = json.load(f)
 
     repos = []

@@ -59,7 +59,10 @@ def export_alchemia_notes() -> list[dict]:
         err = result.stdout.strip() or result.stderr.strip()
         if "folder" in err.lower() and "alchemia" in err.lower():
             print(
-                "  INFO: No 'Alchemia' folder found in Apple Notes — create one to use this channel"
+                (
+                    "  INFO: No 'Alchemia' folder found in Apple Notes — "
+                    "create one to use this channel"
+                ),
             )
         else:
             print(f"  WARNING: Apple Notes export failed: {err[:200]}")

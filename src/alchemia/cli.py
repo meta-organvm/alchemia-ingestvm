@@ -34,7 +34,7 @@ def cmd_intake(args):
     # Write output
     import json
 
-    with open(output, "w") as f:
+    with Path(output).open("w") as f:
         json.dump(
             {
                 "schema_version": "1.0",
@@ -61,7 +61,7 @@ def cmd_absorb(args):
     output = Path(args.output)
 
     print("ABSORB — Loading inventory...")
-    with open(inventory_path) as f:
+    with Path(inventory_path).open() as f:
         data = json.load(f)
     entries = data["entries"]
     print(f"  Loaded {len(entries)} entries from {inventory_path}")
@@ -74,7 +74,7 @@ def cmd_absorb(args):
     entries = classify_all(entries, registry)
 
     # Write output
-    with open(output, "w") as f:
+    with Path(output).open("w") as f:
         json.dump(
             {
                 "schema_version": "1.0",
@@ -99,7 +99,7 @@ def cmd_alchemize(args):
 
     mapping_path = Path(args.mapping)
     print("ALCHEMIZE — Loading classified inventory...")
-    with open(mapping_path) as f:
+    with Path(mapping_path).open() as f:
         data = json.load(f)
     entries = data["entries"]
     print(f"  Loaded {len(entries)} entries")
@@ -209,7 +209,7 @@ def cmd_alchemize(args):
     # Generate and save provenance registry
     prov_registry = generate_provenance_registry(entries)
     prov_path = Path("data/provenance-registry.json")
-    with open(prov_path, "w") as f:
+    with Path(prov_path).open("w") as f:
         json.dump(prov_registry, f, indent=2, default=str)
     print(f"  Wrote {prov_path}")
 
@@ -221,7 +221,7 @@ def cmd_status(args):
     for name in ["intake-inventory.json", "absorb-mapping.json", "provenance-registry.json"]:
         p = Path("data") / name
         if p.exists():
-            with open(p) as f:
+            with Path(p).open() as f:
                 data = json.load(f)
             print(f"  {name}: {data.get('total_files', data.get('total_entries', '?'))} entries")
         else:
@@ -231,7 +231,6 @@ def cmd_status(args):
 def cmd_review(args):
     """Interactive review of PENDING_REVIEW items."""
     print("REVIEW — Not yet implemented (Phase B)")
-    return
 
 
 def cmd_synthesize(args):
@@ -303,6 +302,7 @@ def cmd_sync(args):
     print("\n  Google Docs:")
     from alchemia.channels.google_docs import get_status, sync_google_docs
 
+    folder_name = args.gdocs_folder or "Alchemia"
     gdocs_status = get_status()
     if not gdocs_status["installed"]:
         print("    Skipped — google-api-python-client not installed")
@@ -311,13 +311,13 @@ def cmd_sync(args):
         print("    Skipped — not authenticated")
         print("    Run: alchemia gdocs-auth")
     else:
-        gdocs = sync_google_docs()
+        gdocs = sync_google_docs(folder_name=folder_name)
         synced = sum(1 for d in gdocs if d["status"] == "synced")
         up_to_date = sum(1 for d in gdocs if d["status"] == "up_to_date")
         failed = sum(1 for d in gdocs if d["status"] == "failed")
         print(
-            f"    {len(gdocs)} docs in Alchemia folder:"
-            f" {synced} synced, {up_to_date} up-to-date, {failed} failed"
+            f"    {len(gdocs)} docs in {folder_name} folder:"
+            f" {synced} synced, {up_to_date} up-to-date, {failed} failed",
         )
         for doc in gdocs:
             print(f"    - {doc['name']} [{doc['status']}]")
@@ -394,8 +394,8 @@ def main():
         "--manifest",
         default=str(
             Path(
-                "~/Workspace/meta-organvm/organvm-corpvs-testamentvm/MANIFEST_INDEX_TABLE.csv"
-            ).expanduser()
+                "~/Workspace/meta-organvm/organvm-corpvs-testamentvm/MANIFEST_INDEX_TABLE.csv",
+            ).expanduser(),
         ),
         help="Path to MANIFEST_INDEX_TABLE.csv",
     )
@@ -445,6 +445,10 @@ def main():
 
     # sync
     p_sync = sub.add_parser("sync", help="Sync all capture channels")
+    p_sync.add_argument(
+        "--gdocs-folder",
+        help="Google Drive folder name to sync (default: Alchemia)",
+    )
     p_sync.set_defaults(func=cmd_sync)
 
     # synthesize

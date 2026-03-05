@@ -7,7 +7,7 @@ from pathlib import Path
 
 SAFARI_BOOKMARKS = Path("~/Library/Safari/Bookmarks.plist").expanduser()
 CHROME_BOOKMARKS = Path(
-    "~/Library/Application Support/Google/Chrome/Default/Bookmarks"
+    "~/Library/Application Support/Google/Chrome/Default/Bookmarks",
 ).expanduser()
 
 INSPIRATIONS_FOLDER = "Inspirations"
@@ -63,7 +63,7 @@ def _walk_safari_tree(children: list, path: list, results: list):
                             "url": url,
                             "title": title,
                             "folder_path": "/".join(path),
-                        }
+                        },
                     )
 
 
@@ -76,14 +76,14 @@ def parse_chrome_bookmarks() -> list[dict]:
         return []
 
     try:
-        with open(CHROME_BOOKMARKS, encoding="utf-8") as f:
+        with Path(CHROME_BOOKMARKS).open(encoding="utf-8") as f:
             data = json.load(f)
     except (json.JSONDecodeError, OSError):
         return []
 
     bookmarks = []
     roots = data.get("roots", {})
-    for root_name, root_data in roots.items():
+    for _root_name, root_data in roots.items():
         if isinstance(root_data, dict):
             _walk_chrome_tree(root_data, [], bookmarks)
     return bookmarks
@@ -112,7 +112,7 @@ def _walk_chrome_tree(node: dict, path: list, results: list):
                         "url": url,
                         "title": name,
                         "folder_path": "/".join(path),
-                    }
+                    },
                 )
 
 

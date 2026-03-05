@@ -30,7 +30,7 @@ def generate_provenance_yaml(entries: list[dict], repo_name: str, org: str) -> s
                 "classification_rule": classification.get("rule_name", ""),
                 "confidence": classification.get("confidence", 0),
                 "target_subdir": classification.get("target_subdir", ""),
-            }
+            },
         )
 
     if not materials:
@@ -79,7 +79,7 @@ def generate_provenance_registry(entries: list[dict]) -> dict:
                 "filename": entry["filename"],
                 "sha256": entry["sha256"],
                 "size_bytes": entry["size_bytes"],
-            }
+            },
         )
 
     return {

@@ -91,7 +91,7 @@ def generate_creative_brief(organ: str, taste_path: Path | None = None) -> str:
                 "",
                 "| Role | Value | Usage |",
                 "|------|-------|-------|",
-            ]
+            ],
         )
         for role, value in palette.items():
             lines.append(f"| {role} | `{value}` | {role.replace('_', ' ').title()} |")
@@ -109,7 +109,7 @@ def generate_creative_brief(organ: str, taste_path: Path | None = None) -> str:
             [
                 "## 3. Typography",
                 "",
-            ]
+            ],
         )
         for key, value in typo.items():
             lines.append(f"- **{key.replace('_', ' ').title()}:** {value}")
@@ -125,7 +125,7 @@ def generate_creative_brief(organ: str, taste_path: Path | None = None) -> str:
             [
                 "## 4. Tone & Voice",
                 "",
-            ]
+            ],
         )
         for key, value in tone.items():
             lines.append(f"- **{key.replace('_', ' ').title()}:** {value}")
@@ -141,7 +141,7 @@ def generate_creative_brief(organ: str, taste_path: Path | None = None) -> str:
             [
                 "## 5. Visual Language",
                 "",
-            ]
+            ],
         )
         influences = visual.get("influences", [])
         if influences:
@@ -167,7 +167,7 @@ def generate_creative_brief(organ: str, taste_path: Path | None = None) -> str:
                 "",
                 f"Total references: {len(refs)}",
                 "",
-            ]
+            ],
         )
         for ref in refs:
             ref_type = ref.get("type", "unknown")
@@ -191,7 +191,7 @@ def generate_creative_brief(organ: str, taste_path: Path | None = None) -> str:
             [
                 "## 7. Anti-Patterns (AVOID)",
                 "",
-            ]
+            ],
         )
         for a in anti:
             lines.append(f"- {a}")
@@ -209,7 +209,7 @@ def generate_creative_brief(organ: str, taste_path: Path | None = None) -> str:
             "```markdown",
             format_prompt_injection(chain),
             "```",
-        ]
+        ],
     )
 
     return "\n".join(lines)

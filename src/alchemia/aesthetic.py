@@ -12,14 +12,14 @@ TASTE_PATH = Path(__file__).parent.parent.parent / "taste.yaml"
 def load_taste(path: Path | None = None) -> dict:
     """Load the taste.yaml file."""
     path = path or TASTE_PATH
-    with open(path) as f:
+    with Path(path).open() as f:
         return yaml.safe_load(f)
 
 
 def save_taste(data: dict, path: Path | None = None) -> None:
     """Save the taste.yaml file, preserving comments via backup-and-write."""
     path = path or TASTE_PATH
-    with open(path, "w") as f:
+    with Path(path).open("w") as f:
         yaml.dump(data, f, default_flow_style=False, sort_keys=False, allow_unicode=True)
 
 
@@ -112,7 +112,7 @@ def resolve_aesthetic_chain(
         }
         organ_file = organ_dir / organ_map.get(organ, "")
         if organ_file.exists():
-            with open(organ_file) as f:
+            with Path(organ_file).open() as f:
                 organ_data = yaml.safe_load(f)
             result["organ_modifiers"] = organ_data.get("modifiers", {})
             result["organ_name"] = organ_data.get("name", "")

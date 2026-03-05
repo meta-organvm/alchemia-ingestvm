@@ -12,7 +12,7 @@ def enrich_from_manifest(entries: list[dict], manifest_path: Path) -> list[dict]
     Primary_Tags, Key_Dependencies, Primary_Use, Phase
     """
     manifest = {}
-    with open(manifest_path, newline="", encoding="utf-8") as f:
+    with Path(manifest_path).open(newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for row in reader:
             title = row.get("Title", "").strip()
@@ -67,7 +67,7 @@ def enrich_from_sidecars(entries: list[dict]) -> list[dict]:
         sidecar_path = sidecar_paths.get(key)
         if sidecar_path:
             try:
-                with open(sidecar_path, encoding="utf-8") as f:
+                with Path(sidecar_path).open(encoding="utf-8") as f:
                     sidecar_data = json.load(f)
                 entry["sidecar"] = sidecar_data
                 enriched += 1

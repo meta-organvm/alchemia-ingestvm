@@ -9,7 +9,7 @@ from alchemia.aesthetic import add_reference, format_prompt_injection, resolve_a
 
 def test_taste_yaml_valid():
     taste_path = Path(__file__).parent.parent / "taste.yaml"
-    with open(taste_path) as f:
+    with Path(taste_path).open() as f:
         data = yaml.safe_load(f)
     assert data["schema_version"] == "1.0"
     assert "palette" in data
@@ -22,7 +22,7 @@ def test_taste_yaml_valid():
 def test_organ_aesthetics_valid():
     organ_dir = Path(__file__).parent.parent / "data" / "organ-aesthetics"
     for yaml_file in organ_dir.glob("*.yaml"):
-        with open(yaml_file) as f:
+        with Path(yaml_file).open() as f:
             data = yaml.safe_load(f)
         assert data["schema_version"] == "1.0"
         assert "inherits" in data
@@ -54,14 +54,14 @@ def test_add_reference(tmp_path):
                 "schema_version": "1.0",
                 "references": [],
                 "anti_patterns": [],
-            }
-        )
+            },
+        ),
     )
     entry = add_reference("note", "Test note", tags=["test"], path=taste)
     assert entry["type"] == "description"
     assert entry["text"] == "Test note"
 
     # Verify it was written
-    with open(taste) as f:
+    with Path(taste).open() as f:
         data = yaml.safe_load(f)
     assert len(data["references"]) == 1

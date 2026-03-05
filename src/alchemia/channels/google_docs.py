@@ -12,6 +12,7 @@ Setup:
 The module gracefully degrades if google packages are not installed.
 """
 
+import contextlib
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -124,13 +125,13 @@ def _build_service():
     return build("drive", "v3", credentials=creds)
 
 
-def _find_alchemia_folder(service) -> str | None:
-    """Find the 'Alchemia' folder ID in Google Drive.
+def _find_alchemia_folder(service, folder_name: str = ALCHEMIA_FOLDER_NAME) -> str | None:
+    """Find a folder ID in Google Drive by name.
 
     Returns the folder ID or None if not found.
     """
     query = (
-        f"name = '{ALCHEMIA_FOLDER_NAME}' "
+        f"name = '{folder_name}' "
         "and mimeType = 'application/vnd.google-apps.folder' "
         "and trashed = false"
     )
@@ -156,7 +157,7 @@ def list_docs(folder_name: str | None = None) -> list[dict]:
         return []
 
     folder_name = folder_name or ALCHEMIA_FOLDER_NAME
-    folder_id = _find_alchemia_folder(service)
+    folder_id = _find_alchemia_folder(service, folder_name=folder_name)
     if not folder_id:
         return []
 
@@ -206,7 +207,7 @@ def export_doc(doc_id: str, mime_type: str) -> bytes | None:
             return None
 
 
-def sync_google_docs(output_dir: Path | None = None) -> list[dict]:
+def sync_google_docs(output_dir: Path | None = None, folder_name: str | None = None) -> list[dict]:
     """Sync all docs from the Alchemia folder to a local directory.
 
     Exports Google Docs as markdown, Sheets as CSV, etc.
@@ -217,7 +218,7 @@ def sync_google_docs(output_dir: Path | None = None) -> list[dict]:
     output_dir = output_dir or Path("data/google-docs")
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    docs = list_docs()
+    docs = list_docs(folder_name=folder_name)
     if not docs:
         return []
 
@@ -253,7 +254,7 @@ def sync_google_docs(output_dir: Path | None = None) -> list[dict]:
                             "name": name,
                             "status": "up_to_date",
                             "path": str(out_path),
-                        }
+                        },
                     )
                     continue
             except (ValueError, TypeError):
@@ -265,10 +266,8 @@ def sync_google_docs(output_dir: Path | None = None) -> list[dict]:
             # Try direct download for non-Google files
             service = _build_service()
             if service:
-                try:
+                with contextlib.suppress(Exception):
                     content = service.files().get_media(fileId=doc_id).execute()
-                except Exception:
-                    pass
 
         if content:
             if isinstance(content, str):
@@ -283,7 +282,7 @@ def sync_google_docs(output_dir: Path | None = None) -> list[dict]:
                     "path": str(out_path),
                     "mime_type": mime,
                     "modified": modified,
-                }
+                },
             )
         else:
             results.append(
@@ -291,7 +290,7 @@ def sync_google_docs(output_dir: Path | None = None) -> list[dict]:
                     "name": name,
                     "status": "failed",
                     "error": "Could not export or download",
-                }
+                },
             )
 
     return results

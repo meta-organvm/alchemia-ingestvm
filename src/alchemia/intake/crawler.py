@@ -45,7 +45,7 @@ def sha256_file(path: Path) -> str:
     """Compute SHA-256 hash of a file using chunked reads."""
     h = hashlib.sha256()
     try:
-        with open(path, "rb") as f:
+        with Path(path).open("rb") as f:
             while chunk := f.read(8192):
                 h.update(chunk)
     except (OSError, PermissionError):
