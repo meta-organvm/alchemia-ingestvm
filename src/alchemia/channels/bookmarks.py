@@ -39,18 +39,14 @@ def parse_safari_bookmarks() -> list[dict]:
 
 
 def _walk_safari_tree(children: list, path: list, results: list):
-    """Recursively walk Safari bookmark tree looking for Inspirations folder."""
+    """Recursively walk Safari bookmark tree collecting from Inspirations folder."""
     for item in children:
         item_type = item.get("WebBookmarkType", "")
         title = item.get("Title", item.get("URIDictionary", {}).get("title", ""))
 
         if item_type == "WebBookmarkTypeList":
-            # Folder
             new_path = path + [title]
-            if title == INSPIRATIONS_FOLDER or INSPIRATIONS_FOLDER in path:
-                _walk_safari_tree(item.get("Children", []), new_path, results)
-            else:
-                _walk_safari_tree(item.get("Children", []), new_path, results)
+            _walk_safari_tree(item.get("Children", []), new_path, results)
 
         elif item_type == "WebBookmarkTypeLeaf":
             # Bookmark
@@ -97,10 +93,7 @@ def _walk_chrome_tree(node: dict, path: list, results: list):
     if node_type == "folder":
         new_path = path + [name]
         for child in node.get("children", []):
-            if name == INSPIRATIONS_FOLDER or INSPIRATIONS_FOLDER in path:
-                _walk_chrome_tree(child, new_path, results)
-            else:
-                _walk_chrome_tree(child, new_path, results)
+            _walk_chrome_tree(child, new_path, results)
 
     elif node_type == "url":
         if INSPIRATIONS_FOLDER in path:

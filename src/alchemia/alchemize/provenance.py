@@ -61,8 +61,8 @@ def generate_provenance_registry(entries: list[dict]) -> dict:
         if classification.get("status") != "CLASSIFIED":
             continue
 
-        org = classification.get("target_org", "")
-        repo = classification.get("target_repo", "unspecified")
+        org = classification.get("target_org") or ""
+        repo = classification.get("target_repo") or "unspecified"
         target_key = f"{org}/{repo}"
         source_path = entry["path"]
 

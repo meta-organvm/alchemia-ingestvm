@@ -233,17 +233,13 @@ def classify_entry(entry: dict, registry: dict) -> dict:
     # Rule 3: Staging dir match — ORG-{N}-*-staging/ pattern
     staging_org = STAGING_DIR_TO_ORG.get(toplevel)
     if staging_org:
-        organ_map = {
-            "organvm-iv-taxis": "ORGAN-IV",
-            "organvm-v-logos": "ORGAN-V",
-            "organvm-vi-koinonia": "ORGAN-VI",
-            "organvm-vii-kerygma": "ORGAN-VII",
-        }
+        # Reverse lookup: org name → organ key (covers all organs)
+        org_to_organ = {info["org"]: organ for organ, info in ORGAN_KEYWORDS.items()}
         return {
             "rule": 3,
             "rule_name": "staging_dir_match",
             "confidence": 0.9,
-            "target_organ": organ_map.get(staging_org, ""),
+            "target_organ": org_to_organ.get(staging_org, ""),
             "target_org": staging_org,
             "target_repo": None,  # needs manual routing to specific repo
             "target_subdir": f"docs/source-materials/{subdir}/",
@@ -289,7 +285,7 @@ def classify_entry(entry: dict, registry: dict) -> dict:
             "target_subdir": "docs/source-materials/specs/",
             "status": "CLASSIFIED",
         }
-    if "MET4" in rel_path or "MET4_Fuse" in file_path:
+    if "MET4" in rel_path or "MET4" in file_path:
         return {
             "rule": 4,
             "rule_name": "met4_routing",
