@@ -229,8 +229,48 @@ def cmd_status(args):
 
 
 def cmd_review(args):
-    """Interactive review of PENDING_REVIEW items."""
-    print("REVIEW — Not yet implemented (Phase B)")
+    """Display PENDING_REVIEW items from the absorb mapping."""
+    import json
+
+    mapping_path = Path("data/absorb-mapping.json")
+    if not mapping_path.exists():
+        print("REVIEW — No absorb-mapping.json found. Run 'alchemia absorb' first.")
+        return
+
+    with mapping_path.open() as f:
+        data = json.load(f)
+
+    entries = data.get("entries", [])
+    status_filter = args.status
+
+    matched = []
+    for entry in entries:
+        classification = entry.get("classification", {})
+        if classification.get("status") == status_filter:
+            matched.append(entry)
+
+    if not matched:
+        print(f"REVIEW — No entries with status '{status_filter}'")
+        return
+
+    print(f"REVIEW — {len(matched)} entries with status '{status_filter}':\n")
+    for entry in matched:
+        c = entry.get("classification", {})
+        print(f"  {entry.get('filename', '?')}")
+        print(f"    Rule: {c.get('rule', '?')} ({c.get('rule_name', '?')})")
+        print(f"    Confidence: {c.get('confidence', 0):.2f}")
+        organ = c.get("target_organ") or "—"
+        repo = c.get("target_repo") or "—"
+        print(f"    Suggested: {organ} / {repo}")
+        print()
+
+    # Summary by rule
+    from collections import Counter
+
+    rule_counts = Counter(e.get("classification", {}).get("rule_name", "?") for e in matched)
+    print("  Summary:")
+    for rule_name, count in rule_counts.most_common():
+        print(f"    {rule_name}: {count}")
 
 
 def cmd_synthesize(args):
