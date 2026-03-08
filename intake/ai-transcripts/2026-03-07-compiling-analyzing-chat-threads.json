@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-artifact",
+  "format": "methodology-guide",
+  "date": "2026-03-07",
+  "topic": "A Comprehensive Guide to Compiling and Analyzing Conversational Data",
+  "tags": [
+    "chat-analysis",
+    "conversational-data",
+    "nlp",
+    "data-architecture",
+    "pii-handling",
+    "session-logs",
+    "slack",
+    "teams",
+    "observability",
+    "organ-iv"
+  ],
+  "content_preview": "Comprehensive guide to exporting, consolidating, formatting, and analyzing conversational data from multiple platforms (Slack, Teams, ChatGPT, Claude). Covers data architecture (SQL/NoSQL hybrid), PII handling, NLP analysis methods. Relevant to session log analysis and conductor observability.",
+  "content_hash": "114070430d2caaeaa9c75ae42049620d63ccbcb2cf4a2646687411419073e199",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-07-compiling-analyzing-chat-threads.md",
+  "original_file": "Compiling and Analyzing Chat Threads_.docx",
+  "line_count": 435,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-ai-interaction-documentation-guide.md"
+  ]
+}

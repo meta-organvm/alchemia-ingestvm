@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-transcript",
+  "format": "architectural-specification",
+  "date": "2026-03-07",
+  "topic": "Bulletproof Automated Multimedia Creative System Architecture — Proto-ORGANVM Seven-Organ Blueprint",
+  "tags": [
+    "system-architecture",
+    "seven-organ-model",
+    "github-native",
+    "automation",
+    "registry",
+    "counterpoint",
+    "POSSE",
+    "DOI",
+    "immutable-reference",
+    "epistemology",
+    "north-star"
+  ],
+  "content_preview": "Complete architectural specification for a GitHub-native seven-organ creative system (Theory, Art, Commerce, Public Process, Community, Marketing, Archive) with central registry, double-hyphen naming convention, YAML frontmatter standards, cross-repo dispatch automation, POSSE distribution, Zenodo DOI integration, and immutable reference architecture. Draws on Bauhaus pedagogy, SKOS polyhierarchy, musical counterpoint, and Deleuze/Guattari rhizome. Includes registry schema, GitHub Actions workflows, temporal cadence management, and 4-week implementation sequence. The direct architectural ancestor of ORGANVM's eight-organ model.",
+  "content_hash": "2fa9ac711b42e676ba56c8d1974401ca009e406ce9b1d75c76c044e079934a92",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-07-bulletproof-creative-system-architecture.md",
+  "original_file": "compass_artifact_wf-0a5ebb0b-24b2-4549-afa2-0eaccdb076c5_text_markdown.md",
+  "line_count": 584,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2025-12-ulti-meta-manifesto.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-vertical-integration-design.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-ai-to-ai-handoff-protocols.md"
+  ]
+}

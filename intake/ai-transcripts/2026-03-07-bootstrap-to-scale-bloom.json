@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-transcript",
+  "format": "qa-markdown",
+  "date": "2026-03-07",
+  "topic": "Bootstrap-to-Scale Infrastructure — How Artists Build Institutions Without Selling Out (Bloom Analysis)",
+  "tags": [
+    "bootstrap",
+    "scaling",
+    "artistic-integrity",
+    "governance-before-scale",
+    "funding-inflection",
+    "documentation-as-art",
+    "touring-infrastructure",
+    "case-studies",
+    "bloom-analysis",
+    "community-models",
+    "revenue-diversification",
+    "north-star"
+  ],
+  "content_preview": "Bloom/growth analysis of the Omni-Dromenon-Engine project. Research across 15+ case studies (Radiohead, NIN, Cirque du Soleil, Burning Man, Wooster Group, Blast Theory, Fugazi, Linux, Kubernetes, Apache Foundation) extracting bootstrap-to-scale patterns. Key findings: 7-15 year timeline to institutional scale, critical 3-7 year governance window, funding inflection points $40K-$1.5M, technology choices encoding artistic possibility, documentation practices distinguishing survivors from one-time successes. Includes financial data tables, timeline patterns, community governance models (meritocracy vs benevolent dictatorship vs collective), and revenue stack analysis. Framed from zero-budget adjunct-instructor starting position targeting touring-ballet/Hamilton scale.",
+  "content_hash": "a460e986e0bdaba29d58533050539bca94f427f387b79572289958d6436c4008",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-07-bootstrap-to-scale-bloom.md",
+  "original_file": "Transforming-content-into-growth-opportunities.md",
+  "line_count": 207,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2025-12-ulti-meta-manifesto.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-creative-leadership-framework.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-systemic-project-analysis.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-vertical-integration-design.md"
+  ]
+}

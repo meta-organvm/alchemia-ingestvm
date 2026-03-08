@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-artifact",
+  "format": "philosophical-analysis",
+  "date": "2025-12",
+  "topic": "Plato's Idealism vs. Aristotle's Empiricism \u2014 Foundational Philosophical Dialectic",
+  "tags": [
+    "plato",
+    "aristotle",
+    "idealism",
+    "empiricism",
+    "metaphysics",
+    "epistemology",
+    "ethics",
+    "politics",
+    "taxis",
+    "organ-i"
+  ],
+  "content_preview": "Comparative analysis of Plato's idealism vs Aristotle's empiricism across metaphysics, epistemology, ethics, and politics. The idealism/empiricism tension mirrors ORGANVM's governance dialectic (ideal governance models vs pragmatic implementation). The 'taxis' concept itself derives from Aristotle.",
+  "content_hash": "18ea9e0a534dad5d6d51737ec573d2b18ea344799594d73e6e8261277064388b",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2025-12-plato-idealism-aristotle-empiricism.md",
+  "original_file": "plato_s-idealism-vs.-aristotle_s-empiricism.docx",
+  "line_count": 82,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-metaphysics-of-flux.md"
+  ]
+}

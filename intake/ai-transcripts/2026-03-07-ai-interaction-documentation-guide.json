@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-transcript",
+  "format": "comprehensive-guide",
+  "date": "2026-03-07",
+  "topic": "The Complete Guide to Documenting, Prompting, and Protecting Your AI Interactions \u2014 IP, Security, and Prompt Ops",
+  "tags": [
+    "intellectual-property",
+    "prompt-ops",
+    "context-engineering",
+    "data-sovereignty",
+    "AI-security",
+    "copyright-law",
+    "platform-policies",
+    "reproducibility",
+    "regulatory-compliance",
+    "north-star"
+  ],
+  "content_preview": "Comprehensive guide covering AI interaction IP law (Copyright Office Part 2 Report: prompts don't make users authors of output), platform training policies (all consumer tiers train by default since 2025), archival tools (ChatGPT Exporter, Langfuse, PromptLayer), context engineering evolution (Karpathy: LLM as CPU, context window as RAM), prompt anti-patterns (10 documented mistakes), enterprise data leak statistics (Cyera 2026: AI chats now #1 leak cause), regulatory stack (ISO 42001, NIST AI RMF, EU AI Act with \u20ac35M penalties), prompt ops CI/CD (Promptfoo, 300K+ users), and platform lock-in analysis (ChatGPT Memory vs Claude Memory).",
+  "content_hash": "f34a02923a5a459384e9147908e08a433db5e4be7839d823d4ab531730cf9bff",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-07-ai-interaction-documentation-guide.md",
+  "original_file": "compass_artifact_wf-23c51fcf-0d84-4761-a6f7-d8489208de1f_text_markdown.md",
+  "line_count": 125,
+  "status": "activated",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-ai-to-ai-handoff-protocols.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-technical-spec-best-practices.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-ai-conductor-shipping-guide.md"
+  ],
+  "implementation_status": {
+    "tasks_extracted": [
+      "Q3",
+      "M8",
+      "M13",
+      "L2"
+    ],
+    "tasks_completed": [
+      "Q3",
+      "M8",
+      "M13",
+      "L2"
+    ],
+    "completion_rate": 1.0,
+    "activated_date": "2026-03-08",
+    "sprint_mapping": {
+      "Q3": "Sprint 1",
+      "M8": "Sprint 3",
+      "M13": "Sprint 4",
+      "L2": "Sprint 5"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-generated-guide",
+  "format": "product-concept",
+  "date": "2026-03-08",
+  "topic": "Affective AI Design for iOS Relationships \u2014 Project Evolve Product Concept",
+  "tags": [
+    "affective-ai",
+    "ios-26",
+    "liquid-glass",
+    "relationship-training",
+    "consent-design",
+    "elemental-companion",
+    "product-concept",
+    "organ-iii",
+    "ui-ux",
+    "ethical-ai"
+  ],
+  "content_preview": "iOS 26 app design document for an emotional/relationship-training companion (Project Evolve). Covers: Liquid Glass UI integration, elemental companion evolution (formless\u2192human), consent visual metaphors (blooming flower, intertwined streams, shared lantern, open gate, harmonious dance), 5 product variants (Quiet Haven, Reflecting Pool, Clear Path, Seasonal Garden, Vivid Dream), Relationship Training Model (RTM), stream aesthetic.",
+  "content_hash": "70ce1adb9faee6c7d4782d45f6dbf29310e3ffc2176ea70419011ee728386454",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-08-affective-ai-ios-design.md",
+  "original_file": "Affective-AI-Design-for-iOS-Relationships.md",
+  "line_count": 198,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2025-05-meta-laws-of-reality-codex.md"
+  ]
+}

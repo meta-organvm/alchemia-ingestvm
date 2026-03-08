@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "source": "copilot",
+  "source_type": "ai-transcript",
+  "format": "implementation-guide",
+  "date": "2026-03-08",
+  "topic": "Comprehensive Solutions for Automating File Management Using YAML Metadata",
+  "tags": [
+    "yaml-metadata",
+    "file-management",
+    "auto-tagging",
+    "automation",
+    "windows",
+    "seed-yaml",
+    "registry-management",
+    "organ-iv"
+  ],
+  "content_preview": "Solutions for automating file management with YAML metadata \u2014 auto-titling, integration patterns, optimization. YAML metadata automation relevant to seed.yaml contracts and registry management patterns across the ORGANVM ecosystem.",
+  "content_hash": "30f15b74f34cc65bf3bc0388fe633f360cbec4bcf6dc94824c463213910afbc5",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-08-copilot-yaml-metadata-automation.md",
+  "original_file": "Microsoft Copilot\uff1a Your AI companion (3_8_2026 1\uff1a49\uff1a01 AM).html",
+  "line_count": 335,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-intelligent-file-organization.md"
+  ]
+}

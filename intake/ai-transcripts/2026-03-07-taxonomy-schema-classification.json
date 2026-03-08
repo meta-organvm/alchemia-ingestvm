@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-artifact",
+  "format": "academic-analysis",
+  "date": "2026-03-07",
+  "topic": "The Architecture of Knowledge \u2014 Classification and Taxonomy from Aristotle to Artificial Intelligence",
+  "tags": [
+    "taxonomy",
+    "classification",
+    "schema-org",
+    "ontology",
+    "aristotle",
+    "linnaeus",
+    "library-science",
+    "faceted-classification",
+    "knowledge-organization",
+    "organ-i",
+    "organ-iv"
+  ],
+  "content_preview": "History and theory of classification systems from Aristotle through Linnaeus, Darwin, cladistics, library science (DDC/LCC), to digital taxonomies. Covers Schema.org, ontological design, and the politics of classification. Directly relevant to the conductor's ontology.yaml design.",
+  "content_hash": "1b6a58fdbcc98321d763af8fb1d5e7d1609978863e3a52200ec6b70c1acedbdb",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-07-taxonomy-schema-classification.md",
+  "original_file": "Taxonomy, Schema.org, and Classification._.docx",
+  "line_count": 523,
+  "status": "activated",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-intelligent-file-organization.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-vertical-integration-design.md"
+  ],
+  "implementation_status": {
+    "tasks_extracted": [
+      "M3",
+      "M15",
+      "L3"
+    ],
+    "tasks_completed": [
+      "M3",
+      "M15",
+      "L3"
+    ],
+    "completion_rate": 1.0,
+    "activated_date": "2026-03-08",
+    "sprint_mapping": {
+      "M3": "Sprint 3",
+      "M15": "Sprint 3",
+      "L3": "Sprint 5"
+    }
+  }
+}

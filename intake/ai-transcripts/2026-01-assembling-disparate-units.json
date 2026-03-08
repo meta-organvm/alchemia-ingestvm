@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-artifact",
+  "format": "academic-analysis",
+  "date": "2026-01",
+  "topic": "The Morphodynamics of Assembly \u2014 A Unified Theory of Organizational Bodies",
+  "tags": [
+    "organizational-theory",
+    "superorganism",
+    "assemblage-theory",
+    "stigmergy",
+    "major-transitions",
+    "conflict-suppression",
+    "celestial-accretion",
+    "dao",
+    "organ-i"
+  ],
+  "content_preview": "Interdisciplinary analysis of how autonomous units form coherent wholes \u2014 from celestial accretion and granular physics to biological superorganisms, DAOs, and assemblage theory. Covers conflict suppression, stigmergy, and major evolutionary transitions. Theoretical grounding for the ORGANVM organ model.",
+  "content_hash": "5986638f5125a65fe410bb437c41c145f89ec3c1d329d0fa13efed4fde2795a3",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-01-assembling-disparate-units.md",
+  "original_file": "Assembling Disparate Units_ Universal Patterns.docx",
+  "line_count": 297,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-metaphysics-of-flux.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-vertical-integration-design.md"
+  ]
+}

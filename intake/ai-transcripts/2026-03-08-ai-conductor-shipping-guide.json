@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-artifact",
+  "date": "2026-03-08",
+  "topic": "The AI Conductor's Guide to Shipping Real Software",
+  "tags": [
+    "ai-conductor",
+    "shipping-discipline",
+    "personal-kanban",
+    "shape-up",
+    "vibe-coding",
+    "indie-hacking",
+    "research-creation",
+    "triple-serving",
+    "learning-roadmap",
+    "organ-iv",
+    "creative-technologist",
+    "productization"
+  ],
+  "content_preview": "Practical guide for non-traditional developers orchestrating AI systems. Process frameworks (Personal Kanban, Shape Up, PARA, indie hacker philosophy), vibe coding revolution and limits, monetization paths (consulting, courses, funnels), triple-serving strategy (product + portfolio + publication via research-creation), and 50-70 hour learning roadmap. Key: the non-traditional background is the asset.",
+  "content_hash": "b289df804a556252bf44d5f840262d20fcf6b3d4d69a29c56f362609a35763e8",
+  "original_file": "compass_artifact_wf-46a14dae-0205-43d8-bb33-46c56bd9a094_text_markdown.md",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-shipping-guide.md",
+  "status": "reference",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-sdlc-framework.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-sdlc-deep-research.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-rhetorician-framework.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-creative-leadership-framework.md"
+  ]
+}

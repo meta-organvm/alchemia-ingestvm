@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-transcript",
+  "date": "2026-03-07",
+  "topic": "Vertical Integration as Constraint-Engine — Nintendo/Apple Design Philosophy",
+  "tags": [
+    "vertical-integration",
+    "constraint-driven-design",
+    "interaction-grammars",
+    "play-verbs",
+    "franchise-identity",
+    "platform-philosophy",
+    "nintendo",
+    "apple",
+    "curation",
+    "design-invariants"
+  ],
+  "content_preview": "Analyzes how Nintendo and Apple use vertical integration (hardware + software control) as a constraint-engine that converts restriction into coherence, iteration depth, and distinctive feel. Maps Nintendo franchises as interaction operating systems defined by primary verb-sets rather than genres. Key thesis: restriction → coherence → iteration depth → distinctive feel.",
+  "content_hash": "29fc71029f9d2c0dc076189fce47f07e406a61873b7cd47dca7544365fd2f917",
+  "original_file": "organ-logic-Vertical-Integration-Design.md",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-07-vertical-integration-design.md",
+  "status": "reference",
+  "promoted_date": "2026-03-07",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-creative-leadership-framework.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-era-of-the-orchestrator.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-systemic-project-analysis.md"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-artifact",
+  "format": "framework",
+  "date": "2025-12",
+  "topic": "Architecting Choice \u2014 A Framework for Mitigating Cognitive Bias in Strategic Evaluation",
+  "tags": [
+    "cognitive-bias",
+    "debiasing",
+    "anchoring",
+    "confirmation-bias",
+    "groupthink",
+    "structured-deliberation",
+    "evaluation-rubrics",
+    "governance",
+    "oracle",
+    "organ-i"
+  ],
+  "content_preview": "Framework for mitigating cognitive biases (anchoring, confirmation, framing, groupthink) in strategic evaluation processes. Covers pre-determined criteria, structured deliberation, and procedural safeguards. Applicable to governance decision-making and the conductor's oracle/advisory system.",
+  "content_hash": "80c920e4bdf92173353321357a6d4dc9c3bf754e1aef7e1a3377bee4924b357c",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2025-12-debiasing-evaluation-process.md",
+  "original_file": "debiasing-evaluation-process-recommendations.docx",
+  "line_count": 237,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-creative-leadership-framework.md"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "source": "original-document",
+  "source_type": "manifesto",
+  "format": "docx-to-markdown",
+  "date": "2025-12",
+  "topic": "The Ulti-Meta Manifesto — A Declaration for Reciprocal Performance",
+  "tags": [
+    "manifesto",
+    "reciprocal-performance",
+    "omni-dromenon-engine",
+    "constrained-variation",
+    "process-philosophy",
+    "audience-agency",
+    "transparent-hierarchy",
+    "edge-of-chaos",
+    "meme-design",
+    "origin-document"
+  ],
+  "content_preview": "Origin document for the ORGANVM system. Establishes six principles for reciprocal performance (mutable state, audiences as computational agents, repetition is failure, genre as parameter skin, transparent hierarchy, technology serves reciprocity) grounded in process philosophy (Heraclitus, Whitehead, Deleuze), systems theory (autopoiesis, edge-of-chaos), and the Constrained Variation Principle. Written for the Omni-Dromenon-Engine project (ORGAN-II). Includes compressed formula, metaphysical foundation, technical architecture (CAL, Audience Input Weighting Protocol), implications for performers/audiences/venues, and meme dimension.",
+  "content_hash": "f708624f850ec15c9f2530ad06d9b8e09740cce98a1df6eff6098caa5cf55515",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2025-12-ulti-meta-manifesto.md",
+  "original_file": "The_Ulti-Meta_Manifesto.docx",
+  "line_count": 285,
+  "status": "foundational",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-era-of-the-orchestrator.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-creative-leadership-framework.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-systemic-project-analysis.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-vertical-integration-design.md"
+  ]
+}

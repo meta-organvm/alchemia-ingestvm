@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-generated-guide",
+  "format": "strategy-plan",
+  "date": "2026-03-08",
+  "topic": "Full Professionalization Mode Plan for 4444j99 \u2014 Two-Lane Professional Presence Strategy",
+  "tags": [
+    "professionalization",
+    "github-profile",
+    "portfolio",
+    "resume-as-code",
+    "case-studies",
+    "personal-brand",
+    "outreach",
+    "credentials",
+    "4444j99"
+  ],
+  "content_preview": "90-day/6-month/12-month professionalization roadmap for GitHub presence. Two-lane strategy: Lane A (razzle & dazzle \u2014 widgets, infographics, visual artifacts) and Lane B (professional trust \u2014 case studies, repo hygiene, resume pipeline). Three positioning options: Creative Technologist, AI Systems Engineer, DevEx/Governance Lead. Includes widget blueprint, outreach tactics, credential paths, daily/weekly routines.",
+  "content_hash": "b5c0cf7248254ed7ecaf88f99bd231ab5e0cc8c2ab70d7ff9d40ebe041144b68",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-08-full-professionalization-mode-plan.md",
+  "original_file": "4444j99-professionalization-plan.md",
+  "line_count": 482,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-meta-system-documentation-portfolio.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-bootstrap-to-scale-bloom.md"
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-transcript",
+  "format": "analysis-with-template",
+  "date": "2026-03-07",
+  "topic": "Technical Specification Documentation Best Practices \u2014 Comprehensive Analysis and Template Evaluation",
+  "tags": [
+    "specification-engineering",
+    "requirements-traceability",
+    "IEEE-29148",
+    "documentation-standards",
+    "ADR",
+    "risk-management",
+    "testing-frameworks",
+    "hardware-software-interface",
+    "north-star"
+  ],
+  "content_preview": "Synthesizes best practices from IEEE, ISO, INCOSE, modern software frameworks (RFCs, ADRs, BDD), hardware standards (ASME, IPC), and leading tech companies (Google, Amazon, Microsoft, Tesla, SpaceX, Boston Dynamics) to evaluate a specification template. Identifies 8 critical gaps (executive summary, requirements language, RTM, NFR structure, testing, risks, version control, ADRs) and proposes an 18-section hierarchical template structure with 5-phase implementation roadmap. Compares against Google Design Doc, AWS RFC, IEEE 29148, SpaceX HIL, and Boston Dynamics API-first approaches. Key insight: 'just barely good enough' documentation that provides maximum value without becoming a burden.",
+  "content_hash": "c8e93dd8b8cc0f6e5acacce0f70cf2762bce0b43fe4c0fbb4cac51b3e6f1b9a9",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-07-technical-spec-best-practices.md",
+  "original_file": "compass_artifact_wf-dd596c84-ae58-4153-b530-b5a3b0d9dc30_text_markdown.md",
+  "line_count": 992,
+  "status": "activated",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-creative-leadership-framework.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-systemic-project-analysis.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-vertical-integration-design.md"
+  ],
+  "implementation_status": {
+    "tasks_extracted": [
+      "Q1",
+      "Q2",
+      "Q9",
+      "M7"
+    ],
+    "tasks_completed": [
+      "Q1",
+      "Q2",
+      "Q9",
+      "M7"
+    ],
+    "completion_rate": 1.0,
+    "activated_date": "2026-03-08",
+    "sprint_mapping": {
+      "Q1": "Sprint 1",
+      "Q2": "Sprint 1",
+      "Q9": "Sprint 1",
+      "M7": "Sprint 4"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-transcript",
+  "date": "2026-03-07",
+  "topic": "Creative Leadership Framework — Hybrid Studio + Product Operating Model",
+  "tags": [
+    "governance",
+    "lifecycle",
+    "raci",
+    "creative-direction",
+    "team-topology",
+    "artifact-contracts",
+    "hybrid-model",
+    "north-star"
+  ],
+  "content_preview": "Covers 9-phase lifecycle, RACI matrix, artifact checklist, team topology, governance gates, and project shell template for a hybrid creative+product operating model. Defines how to lead creative work within the ORGANVM system.",
+  "content_hash": "25241fcfececbd36c58183922fc691729a3f69ecc26e3c8d2b462fce5310bc7a",
+  "original_file": "organ-logic-Creative-Leadership-Framework.md",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-07-creative-leadership-framework.md",
+  "status": "reference",
+  "promoted_date": "2026-03-07",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-era-of-the-orchestrator.md"
+  ]
+}

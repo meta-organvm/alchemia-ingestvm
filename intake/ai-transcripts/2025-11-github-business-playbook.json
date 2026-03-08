@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-transcript",
+  "format": "playbook",
+  "date": "2025-11",
+  "topic": "GitHub Business Playbook Deep Dive \u2014 Governance-as-Code for the ORGANVM Cognitive OS",
+  "tags": [
+    "github-business",
+    "repository-rulesets",
+    "codeql",
+    "ghas",
+    "github-apps",
+    "projectsv2",
+    "reusable-workflows",
+    "governance-as-code",
+    "organ-iv",
+    "orchestration-start-here"
+  ],
+  "content_preview": "Expanded playbook for leveraging GitHub Business features \u2014 Repository Rulesets, CodeQL as policy engine, GHAS, GitHub Apps vs PATs, ProjectsV2 GraphQL API, reusable workflows. Written specifically for the ORGANVM '4_ivi374_F0Rivi4 Cognitive Operating System'. Covers org-level rulesets and automation identity patterns.",
+  "content_hash": "1cc8d7619f2a713b9724b2c4f5adb82d66da9184c834affcd74d10b8e89b60c1",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2025-11-github-business-playbook.md",
+  "original_file": "github-business-playbook-deep-dive-20251104.docx",
+  "line_count": 276,
+  "status": "activated",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-sdlc-framework.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-sdlc-deep-research.md"
+  ],
+  "implementation_status": {
+    "tasks_extracted": [
+      "M9",
+      "M10"
+    ],
+    "tasks_completed": [
+      "M9",
+      "M10"
+    ],
+    "completion_rate": 1.0,
+    "activated_date": "2026-03-08",
+    "sprint_mapping": {
+      "M9": "Sprint 4",
+      "M10": "Sprint 4"
+    }
+  }
+}

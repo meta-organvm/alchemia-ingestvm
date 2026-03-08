@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "source": "copilot",
+  "source_type": "ai-transcript",
+  "format": "prompt-engineering-guide",
+  "date": "2026-03-08",
+  "topic": "AI Prompt Engineering for Product Development Lifecycle Documentation",
+  "tags": [
+    "prompt-engineering",
+    "product-development",
+    "prd",
+    "user-stories",
+    "specifications",
+    "go-to-market",
+    "ai-prompts",
+    "organ-iii"
+  ],
+  "content_preview": "AI prompts for drafting Product Development Lifecycle documents \u2014 PRDs, user stories, specs, go-to-market strategies. Comprehensive prompt templates with contextual guidance for each lifecycle stage. Could feed into conductor workflow DSL templates.",
+  "content_hash": "1d27245de9d9e7b35decc56b2a5f5649eb7b7928352ff400307d7c1405067ed0",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-08-copilot-product-development-lifecycle.md",
+  "original_file": "Microsoft Copilot\uff1a Your AI companion (3_8_2026 1\uff1a47\uff1a56 AM).html",
+  "line_count": 373,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-copilot-prd-document-templates.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-technical-spec-best-practices.md"
+  ]
+}

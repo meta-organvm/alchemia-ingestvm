@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-transcript",
+  "format": "methodology-guide",
+  "date": "2026-03-07",
+  "topic": "The AI Conductor's Guide to Shipping Real Software \u2014 Process Frameworks, Shipping Discipline, and Triple-Serving Strategy",
+  "tags": [
+    "shipping-discipline",
+    "process-frameworks",
+    "personal-kanban",
+    "shape-up",
+    "PARA",
+    "vibe-coding",
+    "triple-serving",
+    "research-creation",
+    "learning-roadmap",
+    "north-star"
+  ],
+  "content_preview": "Practitioner's manual for the AI conductor role. Covers four process frameworks for solo builders (Personal Kanban, Shape Up, PARA, indie hacker philosophy), vibe coding analysis with failure mode data (1.7x more issues, 19% slower experienced devs), triple-serving strategy (one project = product + portfolio + publication), revenue models ($2K-$15K consulting, cohort courses, community), and 50-70 hour learning roadmap (MIT Missing Semester, Git, debugging, project structure). Case studies: Casey Reas, Lauren McCarthy, Pieter Levels, McKay Wrigley. Key finding: non-traditional background is advantage, not liability.",
+  "content_hash": "b289df804a556252bf44d5f840262d20fcf6b3d4d69a29c56f362609a35763e8",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-07-ai-conductor-shipping-guide.md",
+  "original_file": "compass_artifact_wf-46a14dae-0205-43d8-bb33-46c56bd9a094_text_markdown.md",
+  "line_count": 122,
+  "status": "activated",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-era-of-the-orchestrator.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-creative-leadership-framework.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-bootstrap-to-scale-bloom.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-meta-system-documentation-portfolio.md"
+  ],
+  "implementation_status": {
+    "tasks_extracted": [
+      "Q8",
+      "M4"
+    ],
+    "tasks_completed": [
+      "Q8",
+      "M4"
+    ],
+    "completion_rate": 1.0,
+    "activated_date": "2026-03-08",
+    "sprint_mapping": {
+      "Q8": "Sprint 1",
+      "M4": "Sprint 3"
+    }
+  }
+}

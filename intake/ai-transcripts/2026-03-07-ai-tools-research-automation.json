@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-artifact",
+  "format": "strategic-blueprint",
+  "date": "2026-03-07",
+  "topic": "The AI-Integrated Workflow \u2014 Strategic Blueprint for Automating Research, Writing, and Project Management",
+  "tags": [
+    "ai-tools",
+    "workflow-automation",
+    "chatgpt",
+    "gemini",
+    "perplexity",
+    "copilot",
+    "grok",
+    "research-automation",
+    "project-management",
+    "tool-orchestration",
+    "organ-iv"
+  ],
+  "content_preview": "Strategic blueprint for integrating five AI tools (ChatGPT, Gemini, Perplexity, Copilot, Grok) into a unified research/writing/project-management workflow with phased handoffs. Directly maps to conductor tool-routing and workflow composition.",
+  "content_hash": "9bac3188ff0e20774316a02a66a813d96c31b20a1bac208e6dba9b52cca808c6",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-07-ai-tools-research-automation.md",
+  "original_file": "AI Tools for Research and Project Automation.docx",
+  "line_count": 321,
+  "status": "activated",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-era-of-the-orchestrator.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-ai-conductor-shipping-guide.md"
+  ],
+  "implementation_status": {
+    "tasks_extracted": [
+      "M2"
+    ],
+    "tasks_completed": [
+      "M2"
+    ],
+    "completion_rate": 1.0,
+    "activated_date": "2026-03-08",
+    "sprint_mapping": {
+      "M2": "Sprint 2"
+    }
+  }
+}

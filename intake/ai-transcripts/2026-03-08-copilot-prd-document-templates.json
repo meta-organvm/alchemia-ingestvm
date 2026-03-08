@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "source": "copilot",
+  "source_type": "ai-transcript",
+  "format": "template-set",
+  "date": "2026-03-08",
+  "topic": "Reproducible Framework and Template Set for PRD Lifecycle Documentation",
+  "tags": [
+    "prd",
+    "requirements-traceability",
+    "implementation-docs",
+    "go-to-market",
+    "post-mortems",
+    "templates",
+    "document-lifecycle",
+    "organ-iii"
+  ],
+  "content_preview": "Template set for documents surrounding a PRD \u2014 requirements traceability, implementation docs, go-to-market plans, post-mortems. Reproducible framework for the full product requirements lifecycle. Complements the prompt engineering guide.",
+  "content_hash": "dd1ac304c554f57c83d74bc5f2a9c2a603d694faa3d4bcb1173bc7cff7a66031",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-08-copilot-prd-document-templates.md",
+  "original_file": "Microsoft Copilot\uff1a Your AI companion (3_8_2026 1\uff1a48\uff1a09 AM).html",
+  "line_count": 599,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-copilot-product-development-lifecycle.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-technical-spec-best-practices.md"
+  ]
+}

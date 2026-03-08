@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-generated-guide",
+  "format": "codex",
+  "date": "2025-05",
+  "topic": "Meta-Laws of Reality Codex \u2014 Universal Laws, Principles, and Axioms Across 9 Domains",
+  "tags": [
+    "meta-laws",
+    "universal-truths",
+    "ontology",
+    "physics",
+    "philosophy",
+    "computation",
+    "mythology",
+    "social-science",
+    "aesthetics",
+    "game-design",
+    "legal-systems",
+    "esoteric",
+    "cross-domain-patterns",
+    "organ-i"
+  ],
+  "content_preview": "Comprehensive codex of universal laws across 9 domains (physics, philosophy, computation, myth, social science, art, game design, legal, esoteric). 7 core meta-laws (Causality, Perception, Entropy, Recursion, Contrast, Connection, Conservation), 50+ domain-specific laws, 8 universal archetypes, and 6 cross-domain meta-patterns (Duality, Causality, Recursion, Entropy, Emergence, Governance). ChatGPT thread export from May 2025.",
+  "content_hash": "d8157e68dd7d5caf6902ded7782e3555f9b88015b14e0a0242f7fc69680f6ba1",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2025-05-meta-laws-of-reality-codex.md",
+  "original_file": "\ud83e\uddf5 Meta-Laws of Reality.md",
+  "line_count": 179,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2025-12-ulti-meta-manifesto.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-metaphysics-of-flux.md",
+    "meta-organvm/praxis-perpetua/research/2025-12-plato-idealism-aristotle-empiricism.md"
+  ]
+}

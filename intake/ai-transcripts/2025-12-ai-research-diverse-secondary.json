@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-transcript",
+  "format": "methodology-guide",
+  "date": "2025-12",
+  "topic": "The Insight Engine \u2014 Strategic Framework for AI-Driven Secondary Research and Novel Synthesis",
+  "tags": [
+    "research-methodology",
+    "consensus-trap",
+    "cross-domain-synthesis",
+    "prompting",
+    "secondary-research",
+    "novel-hypothesis",
+    "conceptual-scaffolding",
+    "organ-i"
+  ],
+  "content_preview": "Framework for escaping LLM consensus bias in research \u2014 multi-phase 'Conceptual Scaffolding' prompting methodology that forces cross-domain synthesis and novel hypothesis generation. Addresses how to use AI for research without arriving at the same results as everyone else.",
+  "content_hash": "a46612946e4dc6fcd8f9de9e1ac77f76ffd4019f2a0b6b62eff79a5934609dad",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2025-12-ai-research-diverse-secondary.md",
+  "original_file": "ai-research-prompt_-diverse-secondary-research.docx",
+  "line_count": 277,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-era-of-the-orchestrator.md"
+  ]
+}

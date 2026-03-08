@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-generated-guide",
+  "format": "docx-to-markdown",
+  "date": "2026-03-07",
+  "topic": "AI-to-AI Collaboration and Handoff Protocols",
+  "tags": [
+    "multi-agent",
+    "handoff-protocols",
+    "snowballing",
+    "cascading",
+    "expansive-inquiry",
+    "critique-loops",
+    "human-oversight",
+    "prompt-syntax",
+    "agent-orchestration",
+    "reliability",
+    "memory-management"
+  ],
+  "content_preview": "Structured guide for AI-to-AI collaboration covering 4 core patterns (snowballing/accumulative iteration, cascading/multi-step relay, expansive inquiry/parallel exploration, critique & challenge/peer review), prompting syntax conventions (role definition, turn-taking markers, handoff signals, termination tokens), 5 critique/expansion models (self-reflective, dual-agent debate, red/blue team, specialist swarm, memory-augmented), reliability engineering (shared state, handoff confirmation, cascading failure prevention, continuity strategies), and human oversight integration (checkpoints, supervisor agents, emergency stops, curation). Cites LangGraph, AutoGen, CAMEL, MetaGPT, CollabStory, Reflexion frameworks.",
+  "content_hash": "63888600a2f39c76b9989f472399aa62e3fc6ec599c74485b86a27ac1cf267a2",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-07-ai-to-ai-handoff-protocols.md",
+  "original_file": "AI-to-AI Collaboration and Handoff Protocols.docx",
+  "line_count": 199,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2025-12-ulti-meta-manifesto.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-creative-leadership-framework.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-era-of-the-orchestrator.md"
+  ]
+}

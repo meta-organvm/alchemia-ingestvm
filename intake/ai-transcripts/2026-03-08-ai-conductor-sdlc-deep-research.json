@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-artifact",
+  "date": "2026-03-08",
+  "topic": "Deep Research — Disciplining, Commodifying, and Demystifying Software Process for an AI-Conductor",
+  "tags": [
+    "ai-conductor",
+    "sdlc",
+    "kanban",
+    "devops",
+    "ci-cd",
+    "domain-driven-design",
+    "dora-metrics",
+    "github-actions",
+    "process-productization",
+    "organ-iv",
+    "score-rehearse-perform",
+    "governance-enforcement"
+  ],
+  "content_preview": "Direct audit of the meta-organvm ecosystem mapped to canonical SDLC phases. Identifies strengths (schema-driven governance, automated dependency validation) and gaps (source-of-truth drift, naming uniformity). Proposes hybrid methodology (Kanban + Scrum-lite + DevOps + DDD + SRE), Score→Rehearse→Perform 3-ritual loop, tier-based testing matrices, DORA/flow/governance metrics, automated enforcement, and prioritized productization roadmap with Gantt timeline.",
+  "content_hash": "fa634809422b2ce9d047859a4ff6b6dd90fb58dd41948f7c9ad8b89127edd030",
+  "original_file": "deep-research-report.md",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-sdlc-deep-research.md",
+  "status": "reference",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-sdlc-framework.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-shipping-guide.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-rhetorician-framework.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-systemic-project-analysis.md"
+  ]
+}

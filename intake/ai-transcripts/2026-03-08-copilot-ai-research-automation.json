@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "source": "copilot",
+  "source_type": "ai-transcript",
+  "format": "workflow-analysis",
+  "date": "2026-03-08",
+  "topic": "Integrating AI Tools for Automated Research, Writing, and Project Management Workflows",
+  "tags": [
+    "ai-tools",
+    "research-automation",
+    "chatgpt",
+    "gemini",
+    "perplexity",
+    "copilot",
+    "grok",
+    "workflow-integration",
+    "organ-iv"
+  ],
+  "content_preview": "Copilot Deep Research session on integrating ChatGPT, Gemini, Perplexity, GitHub Copilot, and Grok for automated research/writing/project workflows. Overlaps with the ChatGPT version but provides Copilot's unique perspective on tool integration patterns.",
+  "content_hash": "02a26c43ddf588408b79072418f8d3ab7966432b351f14f62d08933c8068b2ba",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-08-copilot-ai-research-automation.md",
+  "original_file": "Microsoft Copilot\uff1a Your AI companion (3_8_2026 1\uff1a48\uff1a29 AM).html",
+  "line_count": 253,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-ai-tools-research-automation.md"
+  ]
+}

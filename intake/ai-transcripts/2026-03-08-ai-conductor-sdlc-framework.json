@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-artifact",
+  "date": "2026-03-08",
+  "topic": "Systematizing the Orchestration of AI in Software Development — A Meta-Architectural Framework",
+  "tags": [
+    "ai-conductor",
+    "software-development",
+    "sdlc",
+    "rhetorical-theory",
+    "enterprise-governance",
+    "multi-agent-orchestration",
+    "github-enterprise",
+    "mcp-protocol",
+    "literate-programming",
+    "organ-iv",
+    "productization",
+    "computational-rhetoric"
+  ],
+  "content_preview": "Academic-style report on the AI-conductor paradigm: epistemology of software as rhetoric (Kenneth Burke, literate programming, poetic computation), enterprise governance for eight-organ architecture (GitHub Enterprise Cloud, SCIM, custom properties, rulesets), deterministic SDLC guardrails (branching, CI/CD, testing, IaC), multi-agent orchestration via MCP/A2A protocols, and productization pathways.",
+  "content_hash": "7ffcf408c1c4a19d7e1d9ca1c7886189d30f0ad8310ba00fb19cef57c50549e5",
+  "original_file": "AI Conductor's Software Development Growth.md",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-sdlc-framework.md",
+  "status": "reference",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-shipping-guide.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-sdlc-deep-research.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-rhetorician-framework.md"
+  ]
+}

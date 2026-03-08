@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-artifact",
+  "date": "2026-03-07",
+  "topic": "The Ulti-Meta Manifesto — A Declaration for Reciprocal Performance (Omni-Dromenon-Engine)",
+  "tags": [
+    "manifesto",
+    "reciprocal-performance",
+    "omni-dromenon-engine",
+    "audience-agency",
+    "constrained-variation",
+    "process-philosophy",
+    "performance-architecture",
+    "memetics",
+    "organ-ii",
+    "contextual-awareness-layer",
+    "edge-of-chaos",
+    "genre-agnostic"
+  ],
+  "content_preview": "Founding manifesto of the Omni-Dromenon-Engine project (ORGAN-II). Unpacks the compressed formula ulti-meta--multiversal--poly-algorithm-rhythmic--constant-morph-meme into eight sections: diagnosis of fossilized performance, metaphysical foundation, reciprocal systems vision, six non-negotiable principles (mutable state, computational audiences, non-repetition, genre as parameter skin, transparent hierarchy, technology serves reciprocity), constrained variation principle, implications, memetic strategy, and call to action.",
+  "content_hash": "a5892f51f4118766516b0def02db0aae160177f388e903de517c831ff7f0b7b1",
+  "original_file": "The_Ulti-Meta_Manifesto.docx",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-07-ulti-meta-manifesto.md",
+  "status": "reference",
+  "promoted_date": "2026-03-07",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-metaphysics-of-flux.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-creative-leadership-framework.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-vertical-integration-design.md"
+  ]
+}

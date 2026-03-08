@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-artifact",
+  "date": "2026-03-08",
+  "topic": "The Architecture of Intelligent File Organization — Multi-Dimensional Classification Systems",
+  "tags": [
+    "file-organization",
+    "faceted-classification",
+    "knowledge-graphs",
+    "semantic-search",
+    "vector-databases",
+    "auto-tagging",
+    "controlled-vocabulary",
+    "folksonomy",
+    "digital-asset-management",
+    "alchemia-ingestvm",
+    "information-architecture",
+    "explainability"
+  ],
+  "content_preview": "Research synthesis on multi-dimensional classification systems: faceted classification theory (Ranganathan PMEST), DAM/PKM software landscape, technical architectures (file systems, databases, knowledge graphs), AI automation (vision, NLP, audio, active learning, explainability), best practices, and emerging semantic approaches. Seven architectural recommendations for modular classification: separation of storage/classification, multiple independent facets, hybrid search, confidence-based routing, explainability infrastructure, controlled vocabulary + folksonomy, graceful ambiguity handling.",
+  "content_hash": "2d8d815f1bb009b371ea73219f2da5e1958ceafa152120cd82798d656679db3c",
+  "original_file": "compass_artifact_wf-eeadd8f8-2779-4493-aced-f7a153cac570_text_markdown.md",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-08-intelligent-file-organization.md",
+  "status": "reference",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-systemic-project-analysis.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-creative-leadership-framework.md"
+  ]
+}

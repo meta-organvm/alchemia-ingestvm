@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-artifact",
+  "format": "framework",
+  "date": "2025-12",
+  "topic": "The Lifecycle of Knowledge \u2014 Unified Framework for Documentation, Versioning, and Preservation",
+  "tags": [
+    "knowledge-management",
+    "documentation",
+    "versioning",
+    "archiving",
+    "second-brain",
+    "tagging",
+    "linking",
+    "orphaned-references",
+    "living-documentation",
+    "meta-organvm"
+  ],
+  "content_preview": "Unified framework for knowledge management lifecycle \u2014 philosophical foundations (second brain, emergent vs architected systems), style guides, tagging/linking, version control, archiving, and the orphaned reference problem. Relevant to meta-organvm corpus management and documentation-as-code practices.",
+  "content_hash": "d18c7c820a7c3ed21fd7294ed87835248ea6e784db1a9452ea8b0bfe31414ab5",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2025-12-lifecycle-of-knowledge.md",
+  "original_file": "the-lifecycle-of-knowledge_-unified-framework-for-documentation,-versioning,-and-preservation.docx",
+  "line_count": 707,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-meta-system-documentation-portfolio.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-intelligent-file-organization.md"
+  ]
+}

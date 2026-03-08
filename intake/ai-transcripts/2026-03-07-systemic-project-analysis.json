@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-transcript",
+  "date": "2026-03-07",
+  "topic": "Systemic Project-Product Analysis Process — Two-Lane Diagnostic (Build Truth + World Interface)",
+  "tags": [
+    "project-analysis",
+    "product-audit",
+    "two-lane-scorecard",
+    "monetization",
+    "friction-mapping",
+    "claim-stack",
+    "portfolio-management",
+    "diagnostic-process"
+  ],
+  "content_preview": "Defines a reusable analysis process for evaluating any project/product across two parallel lanes: Lane A (The Thing Itself — build quality, architecture, UX, defensibility) and Lane B (The Thing In The World — positioning, discovery, monetization, community fit). Includes 6-phase cycle, 14-dimension scorecard, diagnostic methods, mechanism ledger, monetization integrity tests, and portfolio-level operations.",
+  "content_hash": "cfabb6e573f467d8ed40d37dfa8090cf6f6eeae7d8875a0b301dfd35beb13873",
+  "original_file": "organ-logic-Systemic-Project-Analysis.md",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-07-systemic-project-analysis.md",
+  "status": "reference",
+  "promoted_date": "2026-03-07",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-creative-leadership-framework.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-era-of-the-orchestrator.md"
+  ]
+}

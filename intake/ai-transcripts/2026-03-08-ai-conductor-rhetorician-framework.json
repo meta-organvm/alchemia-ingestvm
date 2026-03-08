@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "source": "perplexity",
+  "source_type": "ai-transcript",
+  "date": "2026-03-08",
+  "topic": "The Rhetorician's Development Framework — From Theory to Practice",
+  "tags": [
+    "ai-conductor",
+    "rhetorician",
+    "software-discipline",
+    "commodification",
+    "constraint-liberation",
+    "meta-process",
+    "decision-matrices",
+    "organ-iv",
+    "se3-ai-native",
+    "labyrinth-navigation"
+  ],
+  "content_preview": "The originating prompt that spawned the AI-conductor research thread. Three-phase commodification method (Capture→Canonicalize, Structure→Standardize, Systematize→Scale), Constraint Liberation Paradox (single-session scope limit, three-prompt rule, parallel verification), 30-day implementation plan, progress metrics (labyrinth frequency, decision confidence), and abstraction-level discipline ('always wear a label').",
+  "content_hash": "1cc1b47ac3c00195be3141f34dadafe227aab2eb426624cacca689a29f4cc4ee",
+  "original_file": "I am undisciplined in the tried &amp; true procedu.md",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-rhetorician-framework.md",
+  "status": "reference",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-sdlc-framework.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-shipping-guide.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-08-ai-conductor-sdlc-deep-research.md"
+  ]
+}

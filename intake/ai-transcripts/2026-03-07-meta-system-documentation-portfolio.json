@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "source": "chatgpt",
+  "source_type": "ai-transcript",
+  "format": "landscape-analysis",
+  "date": "2026-03-07",
+  "topic": "How Meta-System Documentation Strengthens Creative Technology Applications — Grant, Hiring, and Residency Landscape",
+  "tags": [
+    "portfolio-strategy",
+    "grant-funding",
+    "residencies",
+    "AI-hiring",
+    "documentation-as-art",
+    "creative-technologist",
+    "institutional-recognition",
+    "north-star"
+  ],
+  "content_preview": "Landscape analysis demonstrating that infrastructure and governance documentation are decisive portfolio differentiators across AI hiring (Anthropic, OpenAI, Runway), creative grants (Knight Foundation, Mellon, NSF, Ford BUILD), and technology residencies (Processing Foundation, Eyebeam, Google AMI, ZKM, NEW INC). Case studies of Holly Herndon/Mat Dryhurst, Zach Lieberman, Gene Kogan, Lauren McCarthy, and SFPC treating protocols and governance as primary artistic output. Specific funding programs ($5K-$20M range) that explicitly value systems documentation and infrastructure contribution over isolated outputs.",
+  "content_hash": "292e6facedd541b32e7218e9f62fec986ad1dbd8571cf5a80de3fc4580c8f7fd",
+  "reference_path": "meta-organvm/praxis-perpetua/research/2026-03-07-meta-system-documentation-portfolio.md",
+  "original_file": "compass_artifact_wf-83f15feb-b39d-4c9c-a8e4-c5d2ed71ca8e_text_markdown.md",
+  "line_count": 146,
+  "status": "reference",
+  "ingested_via": "claude-code-manual",
+  "promoted_date": "2026-03-08",
+  "cross_references": [
+    "meta-organvm/VISION.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-bootstrap-to-scale-bloom.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-era-of-the-orchestrator.md",
+    "meta-organvm/praxis-perpetua/research/2026-03-07-ai-conductor-shipping-guide.md"
+  ]
+}
