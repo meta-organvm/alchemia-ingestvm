@@ -152,10 +152,14 @@ def test_sync_bookmarks_combines_sources(monkeypatch):
     import alchemia.channels.bookmarks as mod
 
     monkeypatch.setattr(
-        mod, "parse_safari_bookmarks", lambda: [{"source": "safari", "url": "https://a.com"}]
+        mod,
+        "parse_safari_bookmarks",
+        lambda: [{"source": "safari", "url": "https://a.com"}],
     )
     monkeypatch.setattr(
-        mod, "parse_chrome_bookmarks", lambda: [{"source": "chrome", "url": "https://b.com"}]
+        mod,
+        "parse_chrome_bookmarks",
+        lambda: [{"source": "chrome", "url": "https://b.com"}],
     )
 
     result = sync_bookmarks()

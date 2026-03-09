@@ -1,6 +1,5 @@
 """Tests for alchemize/batch_deployer.py — batch deployment via GitHub API."""
 
-import subprocess
 from unittest.mock import patch
 
 from alchemia.alchemize.batch_deployer import (
@@ -25,7 +24,10 @@ def _make_classified_entry(repo, org, status="CLASSIFIED"):
     }
 
 
-@patch("alchemia.alchemize.batch_deployer.get_deploy_path", return_value="docs/source-materials/theory/file.md")
+@patch(
+    "alchemia.alchemize.batch_deployer.get_deploy_path",
+    return_value="docs/source-materials/theory/file.md",
+)
 @patch("alchemia.alchemize.batch_deployer.classify_action", return_value="deploy")
 def test_build_manifest_groups_by_repo(mock_action, mock_path):
     entries = [

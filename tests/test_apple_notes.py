@@ -31,7 +31,10 @@ def test_export_notes_success(monkeypatch, tmp_path):
 def test_export_notes_no_folder(monkeypatch):
     def mock_run(cmd, **kwargs):
         return subprocess.CompletedProcess(
-            cmd, 0, stdout="ERROR: folder Alchemia not found", stderr=""
+            cmd,
+            0,
+            stdout="ERROR: folder Alchemia not found",
+            stderr="",
         )
 
     monkeypatch.setattr(subprocess, "run", mock_run)

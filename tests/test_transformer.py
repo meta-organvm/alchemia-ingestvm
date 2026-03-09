@@ -1,7 +1,5 @@
 """Tests for alchemia ALCHEMIZE transformer."""
 
-from unittest.mock import patch
-
 from alchemia.alchemize.transformer import classify_action, get_deploy_path, sanitize_filename
 
 

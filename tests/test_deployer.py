@@ -2,7 +2,6 @@
 
 import json
 import subprocess
-from pathlib import Path
 
 from alchemia.alchemize.deployer import (
     deploy_file,

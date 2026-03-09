@@ -3,7 +3,6 @@
 from alchemia.absorb.name_variants import (
     DIR_TO_ORGAN,
     NAME_VARIANTS,
-    STAGING_DIR_TO_ORG,
     resolve_organ_dir,
     resolve_staging,
     resolve_variant,

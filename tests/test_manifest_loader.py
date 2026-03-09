@@ -6,7 +6,9 @@ from alchemia.intake.manifest_loader import enrich_from_manifest, enrich_from_si
 
 
 def test_enrich_from_manifest_matches(tmp_path):
-    csv_content = "ID,Category,Title,Size_KB,Type,Status,Primary_Tags,Key_Dependencies,Primary_Use,Phase\n"
+    csv_content = (
+        "ID,Category,Title,Size_KB,Type,Status,Primary_Tags,Key_Dependencies,Primary_Use,Phase\n"
+    )
     csv_content += '1,Theory,report.md,10,doc,active,"tag1","dep1",research,1\n'
     manifest = tmp_path / "manifest.csv"
     manifest.write_text(csv_content)
@@ -18,7 +20,9 @@ def test_enrich_from_manifest_matches(tmp_path):
 
 
 def test_enrich_from_manifest_no_match(tmp_path):
-    csv_content = "ID,Category,Title,Size_KB,Type,Status,Primary_Tags,Key_Dependencies,Primary_Use,Phase\n"
+    csv_content = (
+        "ID,Category,Title,Size_KB,Type,Status,Primary_Tags,Key_Dependencies,Primary_Use,Phase\n"
+    )
     csv_content += '1,Theory,other.md,10,doc,active,"tag1","dep1",research,1\n'
     manifest = tmp_path / "manifest.csv"
     manifest.write_text(csv_content)
@@ -29,7 +33,9 @@ def test_enrich_from_manifest_no_match(tmp_path):
 
 
 def test_enrich_from_manifest_stem_match(tmp_path):
-    csv_content = "ID,Category,Title,Size_KB,Type,Status,Primary_Tags,Key_Dependencies,Primary_Use,Phase\n"
+    csv_content = (
+        "ID,Category,Title,Size_KB,Type,Status,Primary_Tags,Key_Dependencies,Primary_Use,Phase\n"
+    )
     csv_content += '1,Theory,foo,10,doc,active,"tag1","dep1",research,1\n'
     manifest = tmp_path / "manifest.csv"
     manifest.write_text(csv_content)

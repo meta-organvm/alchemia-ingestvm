@@ -1,0 +1,10 @@
+schema_version: '1.0'
+repo: alchemia-ingestvm
+organ: META
+display_name: "The Alchemical Forge \u2014 Material ingestion pipeline and aesthetic\
+  \ nervous system. Three-stage pipeline (INTAKE \u2192 ABSORB \u2192 ALCHEMIZE) for\
+  \ deploying source materials, plus cascading taste profiles (taste.yaml \u2192 organ-aesthetic.yaml\
+  \ \u2192 repo-aesthetic.yaml) for autonomous aesthetic propagation."
+delivery:
+- platform: web_app
+  status: not_started

@@ -1,7 +1,5 @@
 """Tests for absorb/classifier.py — 7-rule priority chain classification."""
 
-from pathlib import Path
-
 from alchemia.absorb.classifier import (
     _get_toplevel_dir,
     _subdir_for_ext,
@@ -145,8 +143,12 @@ def test_rule7_unresolved():
 def test_classify_all_adds_classification():
     entries = [
         {"path": "/Users/x/Workspace/my-repo/a.md", "extension": ".md"},
-        {"path": "/Users/x/Workspace/random/b.pdf", "extension": ".pdf",
-         "relative_path": "random/b.pdf", "manifest": None},
+        {
+            "path": "/Users/x/Workspace/random/b.pdf",
+            "extension": ".pdf",
+            "relative_path": "random/b.pdf",
+            "manifest": None,
+        },
     ]
     result = classify_all(entries, _mock_registry())
     assert all("classification" in e for e in result)

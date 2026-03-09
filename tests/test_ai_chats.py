@@ -22,7 +22,14 @@ def test_chatgpt_with_conversations(tmp_path):
                 "m1": {
                     "message": {
                         "author": {"role": "user"},
-                        "content": {"parts": ["This is a long enough message that exceeds fifty characters easily."]},
+                        "content": {
+                            "parts": [
+                                (
+                                    "This is a long enough message that exceeds fifty "
+                                    "characters easily."
+                                ),
+                            ],
+                        },
                     },
                 },
             },
@@ -34,7 +41,14 @@ def test_chatgpt_with_conversations(tmp_path):
                 "m2": {
                     "message": {
                         "author": {"role": "assistant"},
-                        "content": {"parts": ["Another long message that is well over the fifty character minimum threshold."]},
+                        "content": {
+                            "parts": [
+                                (
+                                    "Another long message that is well over the fifty "
+                                    "character minimum threshold."
+                                ),
+                            ],
+                        },
                     },
                 },
             },
@@ -79,8 +93,26 @@ def test_claude_sessions_with_jsonl(tmp_path):
     session_dir.mkdir(parents=True)
     jsonl = session_dir / "abc.jsonl"
     lines = [
-        json.dumps({"type": "human", "message": {"content": "Please help me with this longer request that is over twenty characters."}}),
-        json.dumps({"type": "human", "message": {"content": "Another request that is also fairly long and well over the threshold."}}),
+        json.dumps(
+            {
+                "type": "human",
+                "message": {
+                    "content": (
+                        "Please help me with this longer request that is over twenty characters."
+                    ),
+                },
+            },
+        ),
+        json.dumps(
+            {
+                "type": "human",
+                "message": {
+                    "content": (
+                        "Another request that is also fairly long and well over the threshold."
+                    ),
+                },
+            },
+        ),
     ]
     jsonl.write_text("\n".join(lines))
 
