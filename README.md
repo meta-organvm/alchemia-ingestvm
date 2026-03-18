@@ -345,3 +345,11 @@ Alchemia Ingestvm is the material ingestion engine for the [eight-organ creative
 ---
 
 *Built with the [AI-conductor model](https://github.com/organvm-v-logos/public-process): human directs, AI generates, human refines.*
+
+<!-- SYSTEM-NAV-START -->
+
+---
+
+<sub>[Portfolio](https://4444j99.github.io/portfolio/) · [System Directory](https://4444j99.github.io/portfolio/directory/) · [ORGAN Meta](https://meta-organvm.github.io/) · Part of the <a href="https://4444j99.github.io/portfolio/directory/">ORGANVM eight-organ system</a></sub>
+
+<!-- SYSTEM-NAV-END -->
