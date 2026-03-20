@@ -46,5 +46,11 @@ ignore = [
     "PLW2901",
 ]
 
+[tool.pyright]
+pythonVersion = "3.11"
+typeCheckingMode = "basic"
+# Google SDK is an optional dependency — suppress import errors for it
+reportMissingImports = "warning"
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]

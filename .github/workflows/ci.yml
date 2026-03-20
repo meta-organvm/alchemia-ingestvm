@@ -31,5 +31,10 @@ jobs:
           ruff check src/ tests/
           ruff format --check src/ tests/
 
+      - name: Type check with pyright
+        run: |
+          pip install pyright
+          pyright src/
+
       - name: Run tests
         run: pytest tests/ -v

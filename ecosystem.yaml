@@ -1,10 +1,23 @@
 schema_version: '1.0'
 repo: alchemia-ingestvm
 organ: META
-display_name: "The Alchemical Forge \u2014 Material ingestion pipeline and aesthetic\
-  \ nervous system. Three-stage pipeline (INTAKE \u2192 ABSORB \u2192 ALCHEMIZE) for\
-  \ deploying source materials, plus cascading taste profiles (taste.yaml \u2192 organ-aesthetic.yaml\
-  \ \u2192 repo-aesthetic.yaml) for autonomous aesthetic propagation."
+display_name: "The Alchemical Forge — Material ingestion pipeline and aesthetic nervous system"
+
 delivery:
-- platform: web_app
+- platform: python_library
+  status: in_progress
+  priority: critical
+  notes: "Three-stage pipeline (INTAKE→ABSORB→ALCHEMIZE) + taste.yaml aesthetic cascade"
+  next_action: "Complete ALCHEMIZE stage deployment logic"
+- platform: cli_tool
+  status: live
+  priority: high
+  notes: "alchemia CLI with intake, absorb, alchemize, capture, sync, synthesize commands"
+  next_action: "Stabilize sync command across all capture channels"
+
+content:
+- platform: docs_site
   status: not_started
+  priority: high
+  notes: "Pipeline reference, aesthetic cascade documentation, channel integration guides"
+  next_action: "Document three-stage pipeline and taste.yaml cascade system"
