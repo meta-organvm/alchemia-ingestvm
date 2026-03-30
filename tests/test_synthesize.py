@@ -76,4 +76,4 @@ def test_workflow_integration_example():
 def test_organ_map_has_all_organs():
     assert len(ORGAN_MAP) == 8
     assert "ORGAN-I" in ORGAN_MAP
-    assert "META" in ORGAN_MAP
+    assert "META-ORGANVM" in ORGAN_MAP

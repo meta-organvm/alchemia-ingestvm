@@ -6,16 +6,45 @@ from pathlib import Path
 
 from alchemia.aesthetic import format_prompt_injection, load_taste, resolve_aesthetic_chain
 
-ORGAN_MAP = {
-    "ORGAN-I": {"name": "Theoria", "domain": "Theory, epistemology, recursion, ontology"},
-    "ORGAN-II": {"name": "Poiesis", "domain": "Art, generative, performance, experiential"},
-    "ORGAN-III": {"name": "Ergon", "domain": "Commerce, SaaS, B2B, B2C products"},
-    "ORGAN-IV": {"name": "Taxis", "domain": "Orchestration, governance, routing"},
-    "ORGAN-V": {"name": "Logos", "domain": "Public process, essays, building in public"},
-    "ORGAN-VI": {"name": "Koinonia", "domain": "Community, salons, reading groups"},
-    "ORGAN-VII": {"name": "Kerygma", "domain": "Marketing, POSSE distribution"},
-    "META": {"name": "Meta-Organvm", "domain": "Umbrella governance, system-of-systems"},
+# ISOTOPE DISSOLUTION: organ map canonical source is organvm-engine/organ_config.py.
+# The name/domain metadata is alchemia's own concern (the engine doesn't carry it).
+# Gate: skeletal--define G2 (CANONICAL_ORGAN_MAP)
+# Gate: respiratory--ingest G2 (ORGAN_MAP_DISSOLVED)
+
+# Canonical organ metadata for synthesis — names and domains for creative briefs
+_ORGAN_NAMES = {
+    "I": "Theoria", "II": "Poiesis", "III": "Ergon", "IV": "Taxis",
+    "V": "Logos", "VI": "Koinonia", "VII": "Kerygma", "META": "Meta-Organvm",
 }
+_ORGAN_DOMAINS = {
+    "I": "Theory, epistemology, recursion, ontology",
+    "II": "Art, generative, performance, experiential",
+    "III": "Commerce, SaaS, B2B, B2C products",
+    "IV": "Orchestration, governance, routing",
+    "V": "Public process, essays, building in public",
+    "VI": "Community, salons, reading groups",
+    "VII": "Marketing, POSSE distribution",
+    "META": "Umbrella governance, system-of-systems",
+}
+
+try:
+    from organvm_engine.organ_config import get_organ_map as _get_organs
+
+    ORGAN_MAP = {
+        v["registry_key"]: {
+            "name": _ORGAN_NAMES.get(k, k),
+            "domain": _ORGAN_DOMAINS.get(k, ""),
+        }
+        for k, v in _get_organs().items()
+        if "registry_key" in v and k != "LIMINAL"
+    }
+except ImportError:
+    ORGAN_MAP = {
+        f"ORGAN-{k}" if k != "META" else "META-ORGANVM": {
+            "name": _ORGAN_NAMES[k], "domain": _ORGAN_DOMAINS[k],
+        }
+        for k in _ORGAN_NAMES
+    }
 
 
 def analyze_references(taste_path: Path | None = None) -> dict:
